@@ -36,6 +36,10 @@ const barrels: string[] = [
   // App specific barrels.
   'app',
   'app/shared',
+  'app/tale-profile',
+  'app/tale-nav',
+  'app/tale-create-appeal',
+  'app/tale-feed',
   /** @cli-barrel */
 ];
 
