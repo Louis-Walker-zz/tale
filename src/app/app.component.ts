@@ -4,12 +4,19 @@ import { NavComponent } from './tale-nav/';
 import { CreateAppealComponent } from './tale-create-appeal/';
 import { PotentialsComponent } from './tale-potentials/';
 
+const directives = [
+  ProfileComponent, 
+  NavComponent, 
+  CreateAppealComponent,
+  PotentialsComponent
+];
+
 @Component({
   moduleId: module.id,
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
-  directives: [ProfileComponent, NavComponent, CreateAppealComponent, PotentialsComponent]
+  directives
 })
 export class AppComponent {
   title: string = 'app works!';
