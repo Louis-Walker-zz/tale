@@ -40,6 +40,9 @@ const barrels: string[] = [
   'app/tale-nav',
   'app/tale-create-appeal',
   'app/tale-feed',
+  'app/tale-potentials/tale-potentials-filter',
+  'app/tale-potentials-filter',
+  'app/tale-potentials',
   /** @cli-barrel */
 ];
 

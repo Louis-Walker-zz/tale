@@ -12,11 +12,11 @@
     "outDir": "../public/",
     "rootDir": ".",
     "sourceMap": true,
-    "target": "es6",
+    "target": "es5",
     "inlineSources": true
   },
 
-  "files": [
+  "filesGlob": [
     "main.ts",
     "typings.d.ts"
   ]

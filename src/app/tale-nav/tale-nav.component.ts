@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   moduleId: module.id,
-  selector: 'app-tale-nav',
+  selector: 'tale-nav',
   templateUrl: 'tale-nav.component.html',
   styleUrls: ['tale-nav.component.css']
 })
-export class TaleNavComponent implements OnInit {
+export class NavComponent {
 
   constructor() { }
 
