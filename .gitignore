@@ -10,7 +10,7 @@
 
 # IDEs and editors
 /.idea
-.project
+/.project/gitignore
 .classpath
 *.launch
 .settings/
