@@ -1,3 +1,17 @@
-<p>
-  tale-profile works!
-</p>
+<div class="profile component">
+  <div class="profile--header">
+    <img alt="" [src]="profile.pictureURL" />
+
+    <div class="profile--header--meta">
+      <h1>{{profile.username}}</h1>
+
+      <span class="role">{{profile.role}}</span>
+    </div>
+
+    <button class="profile--header--logout" type="button" (onclick)="logout()">Logout</button>
+  </div>
+
+  <div class="profile--stats">
+      <span class="profile--stats--integer" *ngFor="let stat of profile.stats | mapToIterable">{{stat}}</span>
+  </div>
+</div>

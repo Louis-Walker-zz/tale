@@ -1,0 +1,10 @@
+{
+    "username": "Louis Walker",
+    "pictureURL": "../placeholder.png",
+    "role": "Administrator",
+    "stats": {
+        "open": 7,
+        "completed": 9,
+        "reunited": 6
+    }
+}
