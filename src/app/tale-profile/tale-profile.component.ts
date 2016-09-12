@@ -15,7 +15,7 @@ export class ProfileComponent {
   constructor() {
     this.profile = {
         "username": "Louis Walker",
-        "pictureURL": "../placeholder.png",
+        "pictureURL": "http://placehold.it/64x64",
         "role": "Administrator",
         "stats": {
             "open": 7,
