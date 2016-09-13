@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { MapToIterablePipe } from '../pipes/map-to-iterable.pipe';
 
 @Component({
   moduleId: module.id,
   selector: 'tale-profile',
   templateUrl: 'tale-profile.component.html',
-  styleUrls: ['tale-profile.component.css'],
-  pipes: [MapToIterablePipe]
+  styleUrls: ['tale-profile.component.css']
 })
 export class ProfileComponent {
   profile: Object;
