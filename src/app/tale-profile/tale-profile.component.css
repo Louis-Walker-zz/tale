@@ -1,8 +1,9 @@
+@import url("/css/fonts.css");
 @import url("/css/component.css");
 
 .profile {
     width: 100%;
-    height: 160px;
+    height: 120px;
 }
 
 .profile--header {
@@ -19,21 +20,45 @@
 }
 
 .profile--header--meta {
-    width: 60%;
+    width: 42%;
     margin: 18px 4% 0;
 }
 
 .profile--header--meta h1 {
-    margin-bottom: 0;
-    font-size: 22px;
+    margin: 4px 0 0;
+    font-size: 18px;
+}
+
+.role {
+    font-size: 12px;
 }
 
 .profile--header--logout {
     width: 0;
     height: 0;
+    padding-top: 16px;
 }
 
 .profile--header--logout--button {
     width: 80px;
     height: 32px;
+    padding-left: 0;
+    border: none;
+    font: 12px CamptonLight;
+    text-transform: none;
+}
+
+.profile--stats {
+    width: 88%;
+    margin: 16px 6% 0;
+}
+
+.profile--stats--integer {
+    display: inline-block;
+    width: 33%;
+}
+
+.profile--stats--integer:before {
+    display: block;
+    content: attr(data-statname);
 }

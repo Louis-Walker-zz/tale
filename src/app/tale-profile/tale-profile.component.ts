@@ -22,4 +22,9 @@ export class ProfileComponent {
         }
     };
   }
+
+  // Pass the index from ng2's iteration and return the index of profile.stats key
+  profileStatsKey(i): string {
+    return Object.keys(this.profile["stats"])[i]
+  }
 }

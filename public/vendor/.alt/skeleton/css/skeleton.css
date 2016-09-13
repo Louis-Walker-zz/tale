@@ -1,7 +1,9 @@
+@import url("/css/fonts.css");
+
 .container {
     position: relative;
     max-width: 1280px;
-    margin: 0 auto;
+    margin: 24px auto;
     padding: 0 20px
 }
 .column,
@@ -143,7 +145,7 @@ body {
     font-size: 1.5em;
     line-height: 1.6;
     font-weight: 400;
-    font-family: Raleway, HelveticaNeue, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: CamptonLight, HelveticaNeue, Helvetica Neue, Helvetica, Arial, sans-serif;
     color: #222
 }
 h1,
