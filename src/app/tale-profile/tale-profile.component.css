@@ -4,6 +4,7 @@
 .profile {
     width: 100%;
     height: 120px;
+    background-color: #fff;
 }
 
 .profile--header {
@@ -55,10 +56,12 @@
 
 .profile--stats--integer {
     display: inline-block;
-    width: 33%;
+    width: 29%;
+    margin-right: 4%;
 }
 
 .profile--stats--integer:before {
     display: block;
     content: attr(data-statname);
+    font-size: 14px;
 }

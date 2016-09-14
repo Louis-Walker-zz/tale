@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import * as _ from 'lodash';
+
 @Component({
   moduleId: module.id,
   selector: 'tale-profile',
@@ -25,6 +27,6 @@ export class ProfileComponent {
 
   // Pass the index from ng2's iteration and return the index of profile.stats key
   profileStatsKey(i): string {
-    return Object.keys(this.profile["stats"])[i]
+    return _.capitalize(Object.keys(this.profile["stats"])[i])
   }
 }
