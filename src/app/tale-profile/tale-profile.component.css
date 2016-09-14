@@ -9,8 +9,8 @@
 
 .profile--header {
     display: flex;
-    width: 94%;
-    margin: -8px 3%;
+    width: 92%;
+    margin: -8px 4%;
 }
 
 .profile--header img {
@@ -50,18 +50,24 @@
 }
 
 .profile--stats {
-    width: 88%;
-    margin: 16px 6% 0;
+    width: 92%;
+    margin: 22px 4% 0;
 }
 
 .profile--stats--integer {
     display: inline-block;
-    width: 29%;
-    margin-right: 4%;
+    width: 30%;
+    margin-right: 3%;
+    font-size: 18px;
+}
+
+.profile--stats--integer:last-child {
+    margin: 0 0 0 3%;
 }
 
 .profile--stats--integer:before {
     display: block;
     content: attr(data-statname);
-    font-size: 14px;
+    font-size: 12px;
+    line-height: 12px;
 }

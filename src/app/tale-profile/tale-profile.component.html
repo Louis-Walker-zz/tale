@@ -13,7 +13,7 @@
     </div>
   </div>
 
-  <div class="profile--stats">
-      <span class="profile--stats--integer" *ngFor="let stat of profile.stats | mapToIterable; let i = index" [attr.data-statname]="profileStatsKey(i)">{{stat}}</span>
-  </div>
+  <ul class="profile--stats">
+      <li class="profile--stats--integer" *ngFor="let stat of profile.stats | mapToIterable; let i = index" [attr.data-statname]="profileStatsKey(i)">{{stat}}</li>
+  </ul>
 </div>
