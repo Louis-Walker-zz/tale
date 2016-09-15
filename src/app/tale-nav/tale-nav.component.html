@@ -1,3 +1,9 @@
-<p>
-  tale-nav works!
-</p>
+<nav class="tale-nav">
+  <ul>
+    <li class="tale-nav--item" *ngFor="let item of taleNav">
+      <a [href]="linkify(item.permalink)">{{item.name}}</a>
+
+      <button type="button">+</button>
+    </li>
+  </ul>
+</nav>

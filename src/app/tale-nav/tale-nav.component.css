@@ -1,0 +1,45 @@
+.tale-nav {
+    width: 80%;
+    margin: 42px auto;
+}
+
+.tale-nav ul {
+    list-style: none;
+}
+
+/* Height of the button controls height of the list item*/
+.tale-nav--item {
+    display: flex;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.tale-nav--item a, .tale-nav--item button {
+    background-color: #00A4E0;
+    color: #fff;
+    text-align: center;
+    box-shadow: 1px 1px 3px 0 rgba(102, 102, 102, 0.35);
+}
+
+.tale-nav--item a:hover, .tale-nav--item button:hover {
+    background-color: #00a796;
+    border: none;
+}
+
+.tale-nav--item a {
+    display: block;
+    width: 76%;
+    margin-right: 4%;
+    padding-top: 9px;
+    text-decoration: none;
+}
+
+.tale-nav--item button {
+    display: block;
+    width: 38px;
+    height: 38px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+}
