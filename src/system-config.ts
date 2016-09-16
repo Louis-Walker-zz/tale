@@ -9,7 +9,8 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
-  "lodash": "vendor/lodash/lodash.js"
+  "lodash": "vendor/lodash/lodash.js",
+  "linkify": "vendor/linkify/linkify.js"
 };
 
 /** User packages configuration. */
