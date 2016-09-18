@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'tale-nav',
   templateUrl: 'tale-nav.component.html',
   styleUrls: ['tale-nav.component.css']
@@ -40,3 +39,4 @@ export class NavComponent {
     return "http://" + window.location.hostname + ":" + window.location.port + "/" + permalink;
   }
 }
+

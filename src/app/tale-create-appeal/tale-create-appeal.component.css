@@ -1,0 +1,31 @@
+.tale-create-appeal form {
+    display: flex;
+    max-width: 94%;
+    margin: 10px auto;
+}
+
+.tale-create-appeal form img {
+    width: 30px;
+    height: 30px;
+    margin-right: 4%;
+}
+
+.tale-create-appeal form input {
+    width: calc(100% - 8% - 60px);
+    height: 30px;
+    margin: 0 4% 0 0;
+    padding-left: 2px;
+}
+
+.tale-create-appeal form button {
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    background-color: #00A4E0;
+    color: #fff;
+    text-align: center;
+    box-shadow: 1px 1px 3px 0 rgba(102, 102, 102, 0.35);
+    border: none;
+    border-radius: 0;
+}

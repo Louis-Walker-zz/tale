@@ -1,9 +1,9 @@
 @font-face {
     font-family: CamptonLight;
-    src: url("../fonts/Campton-Light.otf");
+    src: url("../fonts/Campton-Light.woff");
 }
 
 @font-face {
     font-family: CamptonBold;
-    src: url("../fonts/Campton-Bold.otf");
+    src: url("../fonts/Campton-Bold.woff");
 }

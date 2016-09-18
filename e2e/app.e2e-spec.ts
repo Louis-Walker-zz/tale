@@ -1,10 +1,10 @@
-import { TalePage } from './app.po';
+import { NgReleasePage } from './app.po';
 
-describe('tale App', function() {
-  let page: TalePage;
+describe('ng-release App', function() {
+  let page: NgReleasePage;
 
   beforeEach(() => {
-    page = new TalePage();
+    page = new NgReleasePage();
   });
 
   it('should display message saying app works', () => {

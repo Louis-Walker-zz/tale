@@ -8,7 +8,6 @@ enum platform {
 }
 
 @Component({
-  moduleId: module.id,
   selector: 'tale-create-appeal',
   templateUrl: 'tale-create-appeal.component.html',
   styleUrls: ['tale-create-appeal.component.css']
@@ -23,12 +22,15 @@ export class CreateAppealComponent {
   }
 
   updatePlatform(): boolean {
-    console.log(this.appealUrl)
+    console.log(this.appealUrl);
 
     return true;
   }
 
   spritify(spriteName: string): string {
     return "http://" + window.location.hostname + ":" + window.location.port + "/sprites/" + spriteName + ".png";
+  }
+
+  openAppeal() {
   }
 }

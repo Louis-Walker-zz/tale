@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import * as _ from 'lodash';
 
 @Component({
-  moduleId: module.id,
   selector: 'tale-profile',
   templateUrl: 'tale-profile.component.html',
   styleUrls: ['tale-profile.component.css']

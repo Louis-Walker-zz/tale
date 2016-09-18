@@ -1,5 +1,9 @@
-<div class="tale-create-appeal">
-  <img [src]="spritify(currentPlatform)">
+<div class="tale-create-appeal component">
+  <form name="createAppeal">
+    <img [src]="spritify(currentPlatform)">
 
-  <input [(ngModel)]="appealUrl" placeholder="Enter appeal URL..."/>
+    <input name="createAppeal" [(ngModel)]="appealUrl" placeholder="Enter appeal URL..."/>
+
+    <button type="button" (click)="openAppeal()">+</button>
+  </form>
 </div>

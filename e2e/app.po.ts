@@ -1,4 +1,6 @@
-export class TalePage {
+import { browser, element, by } from 'protractor/globals';
+
+export class NgReleasePage {
   navigateTo() {
     return browser.get('/');
   }

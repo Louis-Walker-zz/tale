@@ -1,5 +1,13 @@
 @import url("/css/fonts.css");
 
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 .container {
     position: relative;
     max-width: 1280px;
@@ -28,7 +36,7 @@
     }
     .column,
     .columns {
-        margin-left: 4%
+        margin-left: 1%
     }
     .column:first-child,
     .columns:first-child {
