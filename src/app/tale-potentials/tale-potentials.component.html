@@ -1,5 +1,40 @@
-<tale-potentials-filter></tale-potentials-filter>
+<tale-potentials-filter class="tale-potentials--filter"></tale-potentials-filter>
 
-<p>
-  tale-potentials works!
-</p>
+<ul class="potentials">
+  <li class="potentials--item component" *ngFor="let potential of potentials | mapToIterable">
+    <aside class="potential--side twohalf columns">
+      <div class="potential--img-wrapper">
+        <img [src]="potential.lead.picture" />
+      </div>
+
+      <ul class="potential--tags">
+        <li *ngFor="let tag of potential.tags">{{tag}}</li>
+      </ul>
+    </aside>
+    
+    <div class="potential-main ninehalf columns">
+      <div class="potential--meta">
+        <div class="nine columns">
+          <h3>{{potential.lead.name}}</h3>
+
+          <p class="post--authortime">
+            Published by
+            <span>{{potential.author}}</span>
+            -
+            <span>{{potential.timestamp | date}}</span>
+          </p>
+        </div>
+
+        <div class="three columns">
+          {{potential.lead.followers}}
+        </div>
+      </div>
+
+      <div class="potential--content-wrapper">
+        <div class="potential--content">
+          {{potential.content}}
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>

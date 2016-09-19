@@ -1,3 +1,9 @@
-<p>
-  tale-potentials-filter works!
-</p>
+<ul class="potentials--filter--region">
+  <li class="region-toggle" *ngFor="let region of filterOptions.regions | mapToIterable">
+    <button type="button">{{region.shortName}}</button>
+  </li>
+</ul>
+
+<select class="potentials--filter--order" [(ngModel)]="filterOptions.currentOrder" (change)="setOrder($event.target.value)">
+  <option *ngFor="let order of filterOptions.orderNames" [value]="order">{{order}}</option>
+</select>

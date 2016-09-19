@@ -1,0 +1,19 @@
+.potentials--filter--region {
+    display: flex;
+    width: 80%;
+    list-style: none;
+}
+
+/*
+.region-toggle {
+    
+}
+*/
+
+.region-toggle button {
+    width: 32px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 14px;
+}
