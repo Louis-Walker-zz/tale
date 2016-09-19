@@ -8,7 +8,8 @@
       </div>
 
       <ul class="potential--tags">
-        <li *ngFor="let tag of potential.tags">{{tag}}</li>
+        <li data-tag="tag-region">{{potential.region}}</li>
+        <li *ngFor="let tag of potential.tags" [attr.data-tag]="'tag-' + tag">{{tag}}</li>
       </ul>
     </aside>
     
@@ -25,7 +26,7 @@
           </p>
         </div>
 
-        <div class="three columns">
+        <div class="potential--followers three columns"> <!-- Move followers to new h3 wrapper so authortime can fill the whole line | remove columns from meta wrapper-->
           {{potential.lead.followers}}
         </div>
       </div>
@@ -35,6 +36,10 @@
           {{potential.content}}
         </div>
       </div>
+
+      <ul class="potential--stats">
+        <li *ngFor="let stat of potential.stats | mapToIterable">{{stat}}</li>
+      </ul>
     </div>
   </li>
 </ul>
