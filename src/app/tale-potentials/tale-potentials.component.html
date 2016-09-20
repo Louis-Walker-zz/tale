@@ -1,7 +1,7 @@
 <tale-potentials-filter class="tale-potentials--filter"></tale-potentials-filter>
 
 <ul class="potentials">
-  <li class="potentials--item component" *ngFor="let potential of potentials | filterRegion | mapToIterable">
+  <li class="potentials--item component" *ngFor="let potential of potentials | filterRegion: enabledRegions">
     <aside class="potential--side twohalf columns">
       <div class="potential--img-wrapper">
         <img [src]="potential.lead.picture" />
