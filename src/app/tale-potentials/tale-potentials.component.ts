@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { FilterOptionsService } from '../shared/services/filter-options.service';
 
 import { mockPotentials } from '../shared/mockData/mock-potentials';
@@ -12,9 +13,12 @@ import { mockPotentials } from '../shared/mockData/mock-potentials';
 export class PotentialsComponent {
   private potentials: Object;
   private enabledRegions: string[];
+  private order: string;
 
   constructor(private $f: FilterOptionsService) {
     this.enabledRegions = $f.getEnabled();
+    this.order = $f.getOrder();
+
     this.potentials = mockPotentials;
   }
 
