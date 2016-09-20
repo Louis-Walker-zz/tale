@@ -55,7 +55,7 @@ export class FilterOptionsService {
     return placeholder;
   }
 
-  setOrder(newOrder): any {
+  setOrder(newOrder): void {
     this.filterOptions["currentOrder"] = newOrder;
   }
 }
