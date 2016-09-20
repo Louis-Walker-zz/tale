@@ -39,9 +39,14 @@ export class FilterOptionsService {
   }
 
   getEnabled(): string[] {
-    let placeholder: string[] = ["sw", "nw"];
-    
-    return placeholder;
+    let enabledShortNames: string[] = [],
+        enabled = _.filter(this.filterOptions["regions"], {"enabled": true})
+
+    for (let i in enabled) {
+      enabledShortNames.push(enabled[Object.keys(enabled)[i]]["shortName"]);
+    }
+
+    return enabledShortNames;
   }
 
   getOrder(): string {
