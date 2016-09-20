@@ -4,6 +4,6 @@
   </li>
 </ul>
 
-<select class="potentials--filter--order" [(ngModel)]="options.currentOrder" (change)="pushOrder($event.target.value)">
+<select class="potentials--filter--order" [(ngModel)]="options.currentOrder" (change)="$f.setOrder($event.target.value)">
   <option *ngFor="let order of options.orderNames" [value]="order">{{order}}</option>
 </select>

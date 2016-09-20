@@ -14,9 +14,4 @@ export class PotentialsFilterComponent {
   constructor(private $f: FilterOptionsService) {
     this.options = $f.getOptions();
   }
-
-  pushOrder(newOrder) {
-    this.$f.setOrder(newOrder);
-  }
-
 }
