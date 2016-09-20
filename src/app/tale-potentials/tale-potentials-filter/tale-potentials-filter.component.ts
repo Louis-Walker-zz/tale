@@ -26,7 +26,7 @@ export class PotentialsFilterComponent {
         "southEast": {
           "shortName": "se",
           "enabled": true
-        },
+        }
       },
       "orderNames": [
         "Most Recent",

@@ -30,6 +30,10 @@
     height: 48px;
 }
 
+.potential--meta--top {
+    height: 22px;
+}
+
 .post--authortime {
     font-size: 12px;
 }

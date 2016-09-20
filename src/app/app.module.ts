@@ -10,12 +10,13 @@ import { PotentialsComponent } from './tale-potentials/';
 import { PotentialsFilterComponent } from './tale-potentials/tale-potentials-filter';
 
 import { MapToIterablePipe } from './shared/pipes/map-to-iterable.pipe';
+import { FilterRegionPipe } from './shared/pipes/filter-region.pipe';
 
 @NgModule({
   imports: [ BrowserModule, FormsModule ],
   declarations: [ 
     AppComponent, ProfileComponent, NavComponent, CreateAppealComponent, PotentialsComponent, PotentialsFilterComponent,
-    MapToIterablePipe ],
+    MapToIterablePipe, FilterRegionPipe ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

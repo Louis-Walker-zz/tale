@@ -1,7 +1,7 @@
 <tale-potentials-filter class="tale-potentials--filter"></tale-potentials-filter>
 
 <ul class="potentials">
-  <li class="potentials--item component" *ngFor="let potential of potentials | mapToIterable">
+  <li class="potentials--item component" *ngFor="let potential of potentials | filterRegion | mapToIterable">
     <aside class="potential--side twohalf columns">
       <div class="potential--img-wrapper">
         <img [src]="potential.lead.picture" />
@@ -15,19 +15,21 @@
     
     <div class="potential-main ninehalf columns">
       <div class="potential--meta">
-        <div class="nine columns">
-          <h3>{{potential.lead.name}}</h3>
+        <div class="potential--meta--top">
+          <h3 class="nine columns">{{potential.lead.name}}</h3>
 
+          <span class="potential--followers three columns">
+            {{potential.lead.followers}}
+          </span>
+        </div>
+
+        <div class="potential--meta--bottom">
           <p class="post--authortime">
             Published by
             <span>{{potential.author}}</span>
             -
             <span>{{potential.timestamp | date}}</span>
           </p>
-        </div>
-
-        <div class="potential--followers three columns"> <!-- Move followers to new h3 wrapper so authortime can fill the whole line | remove columns from meta wrapper-->
-          {{potential.lead.followers}}
         </div>
       </div>
 
