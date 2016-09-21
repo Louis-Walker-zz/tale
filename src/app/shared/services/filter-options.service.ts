@@ -67,6 +67,8 @@ export class FilterOptionsService {
 
       if ( _region["shortName"] === targetRegionShort ) {
         _region["enabled"] = !(_region["enabled"]);
+
+        console.log(targetRegionShort, _region["enabled"]);
       }
     }
   }

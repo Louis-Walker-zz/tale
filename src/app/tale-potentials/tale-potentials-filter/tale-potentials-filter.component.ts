@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 import { FilterOptionsService } from '../../shared/services/filter-options.service';
 
 @Component({
@@ -11,7 +12,9 @@ import { FilterOptionsService } from '../../shared/services/filter-options.servi
 export class PotentialsFilterComponent {
   private options: Object;
 
-  constructor(private $f: FilterOptionsService) {
+  constructor(
+    private $f: FilterOptionsService
+    ) {
     this.options = $f.getOptions();
   }
 

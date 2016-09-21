@@ -15,7 +15,9 @@ export class PotentialsComponent {
   private enabledRegions: string[];
   private order: string;
 
-  constructor(private $f: FilterOptionsService) {
+  constructor(
+    private $f: FilterOptionsService
+    ) {
     this.enabledRegions = $f.getEnabled();
     this.order = $f.getOrder();
 

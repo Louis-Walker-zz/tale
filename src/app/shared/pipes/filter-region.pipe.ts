@@ -6,7 +6,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterRegionPipe implements PipeTransform {
   private filteredPotentials: Object[] = [];
 
-  transform( value: Object[], enabled: string[] ): Object[] {
+  transform( 
+    value: Object[],
+    enabled: string[]
+    ): Object[] {
     let _filtered = this.filteredPotentials;
 
     for ( let e in enabled ) {
