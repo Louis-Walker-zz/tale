@@ -15,7 +15,7 @@ export class PotentialsFilterComponent {
     this.options = $f.getOptions();
   }
 
-  regionToggle(region) {
+  regionToggle(region): void {
     this.$f.regionEnabledToggle(region['shortName']);
   }
 }

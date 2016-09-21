@@ -6,24 +6,24 @@ export class FilterOptionsService {
 
   constructor() { 
     this.filterOptions = {
-      "regions": {
-        "northWest": {
+      "regions": [
+        {
           "shortName": "nw",
           "enabled": true
         },
-        "southWest": {
+        {
           "shortName": "sw",
           "enabled": true
         },
-        "northEast": {
+        {
           "shortName": "ne",
           "enabled": true
         },
-        "southEast": {
+        {
           "shortName": "se",
           "enabled": true
         }
-      },
+      ],
       "orderNames": [
         "Most Recent",
         "Most Popular",
@@ -60,10 +60,10 @@ export class FilterOptionsService {
   }
 
   regionEnabledToggle(targetRegionShort: string): void {
-    let _regions = this.filterOptions["regions"];
+    let _regions: Object = this.filterOptions["regions"];
 
-    for (let region in _regions) {
-      let _region = _regions[region];
+    for (let i in _regions) {
+      let _region = _regions[i];
 
       if ( _region["shortName"] === targetRegionShort ) {
         _region["enabled"] = !(_region["enabled"]);
