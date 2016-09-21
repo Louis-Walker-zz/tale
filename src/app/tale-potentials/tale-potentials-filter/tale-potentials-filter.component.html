@@ -1,5 +1,5 @@
 <ul class="potentials--filter--region">
-  <li class="region-toggle" *ngFor="let region of options.regions | mapToIterable">
+  <li class="region-toggle" *ngFor="let region of options.regions | mapToIterable" (click)="regionToggle(region)">
     <button type="button">{{region.shortName}}</button>
   </li>
 </ul>

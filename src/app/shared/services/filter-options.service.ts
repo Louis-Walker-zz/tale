@@ -58,4 +58,16 @@ export class FilterOptionsService {
   setOrder(newOrder): void {
     this.filterOptions["currentOrder"] = newOrder;
   }
+
+  regionEnabledToggle(targetRegionShort: string): void {
+    let _regions = this.filterOptions["regions"];
+
+    for (let region in _regions) {
+      let _region = _regions[region];
+
+      if ( _region["shortName"] === targetRegionShort ) {
+        _region["enabled"] = !(_region["enabled"]);
+      }
+    }
+  }
 }
