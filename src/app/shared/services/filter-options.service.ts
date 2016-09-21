@@ -60,7 +60,7 @@ export class FilterOptionsService {
   }
 
   regionEnabledToggle(targetRegionShort: string): void {
-    let _regions: Object = this.filterOptions["regions"];
+    let _regions: Object[] = this.filterOptions["regions"];
 
     for (let i in _regions) {
       let _region = _regions[i];
