@@ -2,9 +2,11 @@
 
 <ul class="potentials">
   <li class="potentials--item component" 
-    *ngFor="let potential of potentials
-    | filterRegionImpure: enabledRegions
-    | filterOrder: order"
+    *ngFor="let potential of (
+      potentials
+      | filterRegionImpure: enabledRegions
+      | filterOrder: order
+      )"
   >
     <aside class="potential--side twohalf columns">
       <div class="potential--img-wrapper">
