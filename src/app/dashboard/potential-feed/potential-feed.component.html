@@ -1,10 +1,10 @@
-<tale-potentials-filter class="tale-potentials--filter"></tale-potentials-filter>
+<tale-potential-filter class="tale-potentials--filter"></tale-potential-filter>
 
 <ul class="potentials">
   <li class="potentials--item component" 
     *ngFor="let potential of (
       potentials
-      | filterRegionImpure: enabledRegions
+      | filterRegion: enabledRegions
       | filterOrder: order
       )"
   >

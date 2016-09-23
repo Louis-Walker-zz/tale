@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
 
-
-import { FilterOptionsService } from '../../shared/services/filter-options.service';
+import { FilterOptionsService } from '../shared/filter-options.service';
 
 @Component({
-  selector: 'tale-potentials-filter',
-  templateUrl: 'tale-potentials-filter.component.html',
-  styleUrls: ['tale-potentials-filter.component.css'],
+  selector: 'tale-potential-filter',
+  templateUrl: 'tale-potential-filter.component.html',
+  styleUrls: ['tale-potential-filter.component.css'],
   providers: [FilterOptionsService]
 })
-export class PotentialsFilterComponent {
+export class PotentialFilterComponent {
   private options: Object;
 
   constructor(

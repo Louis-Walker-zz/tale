@@ -1,24 +1,47 @@
+// Angular Modules
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
-import { AppComponent }  from './app.component';
-import { ProfileComponent } from './tale-profile/';
-import { NavComponent } from './tale-nav/';
-import { CreateAppealComponent } from './tale-create-appeal/';
-import { PotentialsComponent } from './tale-potentials/';
-import { PotentialsFilterComponent } from './tale-potentials/tale-potentials-filter';
+// Soft Modules
+import { Routing }  from './app.routing';
 
-import { MapToIterablePipe } from './shared/pipes/map-to-iterable.pipe';
-import { FilterRegionPipe } from './shared/pipes/filter-region.pipe';
-import { FilterOrderPipe } from './shared/pipes/filter-order.pipe';
-import { FilterRegionImpurePipe } from './shared/pipes/filter-region-impure.pipe';
+// Root Component
+import { AppComponent } from './app.component';
+
+// View Modules
+import { DashboardModule } from './dashboard/dashboard.module';
+import { AppealsModule } from './appeals/appeals.module';
+import { LeadsModule } from './leads/leads.module';
+import { UsersModule } from './users/users.module';
+
+// Feature Modules
+import { TaleMenuModule } from './shared/modules/tale-menu/tale-menu.module';
 
 @NgModule({
-  imports: [ BrowserModule, FormsModule ],
+  imports: [ 
+    // Angular Modules
+    BrowserModule, 
+    FormsModule, 
+
+    // Soft Modules
+    Routing, 
+
+    // Views
+    DashboardModule,
+    AppealsModule,
+    LeadsModule,
+    UsersModule,
+
+    // Feature Modules
+    TaleMenuModule
+  ],
+
   declarations: [ 
-    AppComponent, ProfileComponent, NavComponent, CreateAppealComponent, PotentialsComponent, PotentialsFilterComponent,
-    MapToIterablePipe, FilterRegionPipe, FilterOrderPipe, FilterRegionImpurePipe ],
-  bootstrap:    [ AppComponent ]
+    // Root component
+    AppComponent
+  ],
+
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
