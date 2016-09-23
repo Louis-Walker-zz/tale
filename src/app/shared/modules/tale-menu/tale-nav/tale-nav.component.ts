@@ -13,30 +13,26 @@ export class NavComponent {
     this.taleNav = [
       {
         name: "Dashboard",
-        permalink: "dashboard",
+        route: "dashboard",
         action: "createAppeal"
       },
       {
         name: "Appeals",
-        permalink: "appeals",
+        route: "appeals",
         action: "createAppeal"
       },
       {
         name: "Leads",
-        permalink: "leads",
+        route: "leads",
         action: "createLead"
       },
       {
         name: "Users",
-        permalink: "users",
+        route: "users",
         action: "inviteUser",
         admin: true
       }
     ]
-  }
-
-  linkify(permalink): string {
-    return "http://" + window.location.hostname + ":" + window.location.port + "/" + permalink;
   }
 }
 

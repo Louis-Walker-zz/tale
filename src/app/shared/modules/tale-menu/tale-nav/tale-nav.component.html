@@ -1,7 +1,7 @@
 <nav class="tale-nav">
   <ul>
     <li class="tale-nav--item" *ngFor="let item of taleNav">
-      <a [href]="linkify(item.permalink)">{{item.name}}</a>
+      <a [routerLink]="['/', item.route]">{{item.name}}</a>
 
       <button type="button">+</button>
     </li>
