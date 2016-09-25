@@ -30,4 +30,8 @@ export class PotentialService {
     console.log('err');
   }
 
+  reset() {
+    this.potentials = this.getPotentials().then(potentials => {console.log(potentials.slice(0, potentials.length-3)); return potentials.slice(0, potentials.length-3)});
+  }
+
 }
