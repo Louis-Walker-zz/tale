@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'filterRegion'
+  name: 'filterRegion',
+  pure: false
 })
 export class FilterRegionPipe implements PipeTransform {
   private filteredPotentials: Object[] = [];

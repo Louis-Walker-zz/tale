@@ -1,7 +1,7 @@
 <li class="potentials--item component">
     <aside class="potential--side twohalf columns">
       <div class="potential--img-wrapper">
-        <img [src]="potential.lead.picture" />
+        <img [src]="potential.lead.pictureUrl" />
       </div>
 
       <ul class="potential--tags">
@@ -37,7 +37,7 @@
       </div>
 
       <ul class="potential--stats">
-        <li *ngFor="let stat of potential.stats">{{stat}}</li>
+        <li *ngFor="let stat of potential.stats | mapToIterable">{{stat}}</li>
       </ul>
     </div>
   </li>

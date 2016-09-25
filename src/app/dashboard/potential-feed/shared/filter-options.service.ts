@@ -49,16 +49,6 @@ export class FilterOptionsService {
     return enabledShortNames;
   }
 
-  getOrder(): string {
-    let placeholder: string = "timestamp";
-    
-    return placeholder;
-  }
-
-  setOrder(newOrder): void {
-    this.filterOptions["currentOrder"] = newOrder;
-  }
-
   regionEnabledToggle(targetRegionShort: string): void {
     let _regions: Object[] = this.filterOptions["regions"];
 
@@ -71,5 +61,15 @@ export class FilterOptionsService {
         console.log(targetRegionShort, _region["enabled"]);
       }
     }
+  }
+
+  getOrder(): string {
+    let placeholder: string = "timestamp";
+    
+    return placeholder;
+  }
+
+  setOrder(newOrder): void {
+    this.filterOptions["currentOrder"] = newOrder;
   }
 }

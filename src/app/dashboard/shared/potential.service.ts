@@ -12,7 +12,6 @@ export class PotentialService {
   private potentialUrl: string = 'app/potentials';
 
   constructor(private http: Http) {
-
   }
 
   ngOnInit() {
@@ -24,7 +23,7 @@ export class PotentialService {
     return this.http.get(this.potentialUrl)
       .toPromise()
       .then(res => res.json().data as Potential[])
-      .catch(this.handleError);
+      .catch(res => this.handleError());
   }
 
   handleError() {

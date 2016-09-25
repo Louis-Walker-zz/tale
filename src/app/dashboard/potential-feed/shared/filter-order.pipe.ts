@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'filterOrder'
+  name: 'filterOrder',
+  pure: false
 })
 export class FilterOrderPipe implements PipeTransform {
   private orderedPotentials: Object[] = [];

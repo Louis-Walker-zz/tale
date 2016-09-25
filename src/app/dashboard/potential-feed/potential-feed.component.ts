@@ -10,18 +10,20 @@ import { PotentialService } from '../shared/potential.service';
   providers: [FilterOptionsService, PotentialService]
 })
 export class PotentialFeedComponent {
-  private potentialsData;
+  private potentialsArr;
   private enabledRegions: string[];
   private order: string;
 
   constructor(
     private $f: FilterOptionsService,
-    private $p: PotentialService) {
+    private $p: PotentialService ) {
+
     this.enabledRegions = $f.getEnabled();
     this.order = $f.getOrder();
   }
 
   ngOnInit() {
-    this.potentialsData = this.$p.getPotentials();
+    this.$p.getPotentials()
+      .then(potentials => this.potentialsArr = potentials);
   }
 }
