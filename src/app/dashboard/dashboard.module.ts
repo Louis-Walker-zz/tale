@@ -21,7 +21,7 @@ import { DashboardComponent } from './';
     ],
 
     declarations: [ 
-        DashboardComponent 
+        DashboardComponent
     ],
 
     exports: [ 

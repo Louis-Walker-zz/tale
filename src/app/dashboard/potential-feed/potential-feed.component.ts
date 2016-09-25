@@ -1,25 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { FilterOptionsService } from './shared/filter-options.service';
+import { PotentialService } from '../shared/potential.service';
 
 @Component({
-  selector: 'tale-potential-feed',
+  selector: 'potential-feed',
   templateUrl: 'potential-feed.component.html',
   styleUrls: ['potential-feed.component.css'],
-  providers: [FilterOptionsService]
+  providers: [FilterOptionsService, PotentialService]
 })
 export class PotentialFeedComponent {
-  private potentials: Object;
+  private potentialsData;
   private enabledRegions: string[];
   private order: string;
 
   constructor(
-    private $f: FilterOptionsService
-    ) {
+    private $f: FilterOptionsService,
+    private $p: PotentialService) {
     this.enabledRegions = $f.getEnabled();
     this.order = $f.getOrder();
-
-    this.potentials = 'mockPotentials';
   }
 
+  ngOnInit() {
+    this.potentialsData = this.$p.getPotentials();
+  }
 }

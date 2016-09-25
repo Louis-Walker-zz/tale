@@ -1,53 +1,9 @@
 <tale-potential-filter class="tale-potentials--filter"></tale-potential-filter>
 
 <ul class="potentials">
-  <li class="potentials--item component" 
-    *ngFor="let potential of (
-      potentials
-      | filterRegion: enabledRegions
-      | filterOrder: order
-      )"
-  >
-    <aside class="potential--side twohalf columns">
-      <div class="potential--img-wrapper">
-        <img [src]="potential.lead.picture" />
-      </div>
-
-      <ul class="potential--tags">
-        <li data-tag="tag-region">{{potential.region}}</li>
-        <li *ngFor="let tag of potential.tags" [attr.data-tag]="'tag-' + tag">{{tag}}</li>
-      </ul>
-    </aside>
-    
-    <div class="potential-main ninehalf columns">
-      <div class="potential--meta">
-        <div class="potential--meta--top">
-          <h3 class="nine columns">{{potential.lead.name}}</h3>
-
-          <span class="potential--followers three columns">
-            {{potential.lead.followers}}
-          </span>
-        </div>
-
-        <div class="potential--meta--bottom">
-          <p class="post--authortime">
-            Published by
-            <span>{{potential.author}}</span>
-            -
-            <span>{{potential.timestamp | date}}</span>
-          </p>
-        </div>
-      </div>
-
-      <div class="potential--content-wrapper">
-        <div class="potential--content">
-          {{potential.content}}
-        </div>
-      </div>
-
-      <ul class="potential--stats">
-        <li *ngFor="let stat of potential.stats | mapToIterable">{{stat}}</li>
-      </ul>
-    </div>
-  </li>
+  <potential *ngFor="let potential of ( 
+    potentialsData
+    | filterRegion: enabledRegions
+    | filterOrder: order )">
+  </potential>
 </ul>

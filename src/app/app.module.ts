@@ -3,6 +3,10 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
+// Mock API
+import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
+import { InMemoryDataService }  from './shared/mockData/mock-potentials';
+
 // Soft Modules
 import { Routing }  from './app.routing';
 
@@ -26,6 +30,7 @@ import { TaleMenuModule } from './shared/modules/tale-menu/tale-menu.module';
 
     // Soft Modules
     Routing, 
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
 
     // Views
     DashboardModule,

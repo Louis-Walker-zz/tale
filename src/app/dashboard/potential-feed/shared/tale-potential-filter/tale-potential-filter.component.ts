@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { FilterOptionsService } from '../shared/filter-options.service';
+import { FilterOptionsService } from '../filter-options.service';
 
 @Component({
   selector: 'tale-potential-filter',
