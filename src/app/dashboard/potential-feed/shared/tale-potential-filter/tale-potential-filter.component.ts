@@ -1,26 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
-import { FilterOptionsService } from '../filter-options.service';
 import { PotentialService } from '../../../shared/potential.service';
 
 @Component({
   selector: 'tale-potential-filter',
   templateUrl: 'tale-potential-filter.component.html',
   styleUrls: ['tale-potential-filter.component.css'],
-  providers: [FilterOptionsService]
+  providers: [PotentialService]
 })
 export class PotentialFilterComponent {
+  @Output() updateFeed = new EventEmitter<string>();
+
   private options: Object;
 
   constructor(
-    private $f: FilterOptionsService,
     private $p: PotentialService
     ) {
-    this.options = $f.getOptions();
+    this.options = $p.getOptions();
   }
 
   regionToggle(region): void {
-    this.$f.regionEnabledToggle(region['shortName']);
-    this.$p.reset();
+    this.$p.regionEnabledToggle(region['shortName']);
+
+    this.updateFeed.emit(region);
   }
 }
