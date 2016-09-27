@@ -12,22 +12,30 @@ export class PotentialFeedComponent implements OnInit {
   private potentialsArr;
   private enabledRegions: string[];
   private order: string;
+  private showPotentials: boolean = true;
 
   constructor(
     private $p: PotentialService,
-    private ref: ChangeDetectorRef ) {
-
-    this.enabledRegions = $p.getEnabled();
-    this.order = $p.getOrder();
+    private $c: ChangeDetectorRef) {
   }
 
   ngOnInit() {
+    this.enabledRegions = this.$p.getEnabled();
+    this.order = this.$p.getOrder();
+
     this.$p.getPotentials()
       .then(potentials => this.potentialsArr = potentials);
   }
 
-  updateFeed(region) {
-    this.enabledRegions = ["nw"];
-    this.ref.detectChanges();
+  updateFeed() {
+    this.showPotentials = false;
+    this.$c.detectChanges();
+
+    this.enabledRegions = this.$p.getEnabled();
+
+    setTimeout(() => {
+      this.showPotentials = true;
+      this.$c.detectChanges();
+    }, 1);
   }
 }

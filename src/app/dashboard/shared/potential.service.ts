@@ -10,7 +10,6 @@ export class PotentialService {
   public potentials: Promise<Potential[]>;
 
   private potentialUrl: string = 'app/potentials';
-
   private filterOptions: Object;
 
   constructor(private http: Http) {
@@ -18,7 +17,7 @@ export class PotentialService {
       "regions": [
         {
           "shortName": "nw",
-          "enabled": false
+          "enabled": true
         },
         {
           "shortName": "sw",
@@ -44,7 +43,7 @@ export class PotentialService {
   }
 
   ngOnInit() {
-    this.potentials = this.getPotentials();
+
   }
 
   // !TODO: handle desired ammounts and data types on http.get
@@ -67,7 +66,7 @@ export class PotentialService {
       enabledShortNames.push(enabled[Object.keys(enabled)[i]]["shortName"]);
     }
 
-    console.log(enabled, enabledShortNames);
+    console.log("getEnabled", enabled, enabledShortNames, this.filterOptions["regions"]);
 
     return enabledShortNames;
   }
@@ -81,11 +80,9 @@ export class PotentialService {
       if ( _region["shortName"] === targetRegionShort ) {
         _region["enabled"] = !(_region["enabled"]);
 
-        console.log(targetRegionShort, _region["enabled"]);
+        console.log("rET", targetRegionShort, _region["enabled"]);
       }
     }
-
-    console.log(this.filterOptions["regions"], "!!!!!!!!!", this.getEnabled())
 
   }
 

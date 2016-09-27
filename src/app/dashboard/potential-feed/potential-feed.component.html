@@ -1,6 +1,6 @@
-<tale-potential-filter class="tale-potentials--filter" (updateFeed)="updateFeed($event)"></tale-potential-filter>
+<tale-potential-filter class="tale-potentials--filter" (updateFeed)="updateFeed()"></tale-potential-filter>
 
-<ul class="potentials">
+<ul class="potentials" *ngIf="showPotentials">
   <potential *ngFor="let potential of ( 
     potentialsArr
     | filterRegion: enabledRegions
