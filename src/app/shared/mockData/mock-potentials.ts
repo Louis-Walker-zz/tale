@@ -19,6 +19,7 @@ export class InMemoryDataService implements InMemoryDbService {
             "shares": 4
           },
           "region": "sw",
+          "regionLong": "South West",
           "tags": ["important"]
         },
         {
@@ -37,6 +38,7 @@ export class InMemoryDataService implements InMemoryDbService {
             "shares": 4
           },
           "region": "nw",
+          "regionLong": "North West",
           "tags": ["important"]
         },
         {
@@ -55,6 +57,7 @@ export class InMemoryDataService implements InMemoryDbService {
             "shares": 4
           },
           "region": "sw",
+          "regionLong": "South West",
           "tags": ["important"]
         },
         {
@@ -73,6 +76,7 @@ export class InMemoryDataService implements InMemoryDbService {
             "shares": 4
           },
           "region": "sw",
+          "regionLong": "South West",
           "tags": ["important"]
         }
     ];

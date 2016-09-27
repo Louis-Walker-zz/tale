@@ -12,7 +12,5 @@ export class PotentialComponent implements OnInit {
   }
 
   ngOnInit() {
-
   }
-
 }

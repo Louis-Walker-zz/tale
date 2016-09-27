@@ -20,8 +20,10 @@ export class PotentialFilterComponent {
   }
 
   regionToggle(region): void {
-    this.$p.regionEnabledToggle(region['shortName']);
+    let _shortName = region['shortName'];
 
-    this.updateFeed.emit(region);
+    this.$p.regionEnabledToggle(_shortName);
+
+    this.updateFeed.emit(_shortName);
   }
 }

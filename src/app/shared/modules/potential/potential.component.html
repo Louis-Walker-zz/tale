@@ -5,7 +5,7 @@
       </div>
 
       <ul class="potential--tags">
-        <li data-tag="tag-region">{{potential.region}}</li>
+        <li data-tag="tag-region">{{potential.regionLong}}</li>
         <li *ngFor="let tag of potential.tags" [attr.data-tag]="'tag-' + tag">{{tag}}</li>
       </ul>
     </aside>

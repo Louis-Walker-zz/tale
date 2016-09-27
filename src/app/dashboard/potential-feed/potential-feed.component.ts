@@ -27,11 +27,21 @@ export class PotentialFeedComponent implements OnInit {
       .then(potentials => this.potentialsArr = potentials);
   }
 
-  updateFeed() {
+  updateFeed(region) {
     this.showPotentials = false;
     this.$c.detectChanges();
 
-    this.enabledRegions = this.$p.getEnabled();
+    let _enabled = this.enabledRegions;
+
+    let enabledChecker = _.findIndex( _enabled, (r) => r == region );
+
+    console.log(enabledChecker);
+
+    if ( enabledChecker === -1 ) {
+      _enabled.push(region);
+    } else {
+      _enabled = _.remove( _enabled, (r) => r == region);
+    };
 
     setTimeout(() => {
       this.showPotentials = true;
