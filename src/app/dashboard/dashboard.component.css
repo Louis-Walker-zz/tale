@@ -1,0 +1,11 @@
+.content {
+    min-width: 320px;
+}
+
+.panels {
+    min-width: 300px;
+}
+
+.hide {
+    opacity: 0%;
+}

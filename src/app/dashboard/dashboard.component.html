@@ -1,2 +1,12 @@
-<tale-create-appeal></tale-create-appeal>
-<potential-feed></potential-feed>
+<div class="content six columns">
+    <tale-create-appeal></tale-create-appeal>
+    <potential-feed (showExtended)="showExtendedPotential($event)"></potential-feed>
+</div>
+
+<div class="panels five columns">
+    <potential
+    [class.hide]="showPotential"
+    [potential]="potential">
+
+    </potential>
+</div>

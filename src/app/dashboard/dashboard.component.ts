@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'tale-dashboard',
@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  private showPotential: boolean;
+  private potential: any;
 
   constructor() { }
 
   ngOnInit() {
+    this.showPotential = false;
+  }
+
+  showExtendedPotential(p) {
+    this.showPotential = !(this.showPotential);
+    this.potential = p;
+    console.log(p);
   }
 
 }

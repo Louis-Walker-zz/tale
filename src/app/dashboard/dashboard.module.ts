@@ -9,6 +9,7 @@ import { PotentialFeedModule } from './potential-feed';
 
 // Local Components
 import { DashboardComponent } from './';
+import { PotentialModule } from '../shared/modules/potential';
 
 @NgModule({
     imports: [ 
@@ -17,7 +18,8 @@ import { DashboardComponent } from './';
         
         // Feature Modules
         CreateAppealModule,
-        PotentialFeedModule
+        PotentialFeedModule,
+        PotentialModule
     ],
 
     declarations: [ 

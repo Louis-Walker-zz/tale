@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, Output, OnInit, ChangeDetectorRef, EventEmitter } from '@angular/core';
 
 import { FilterOptionsService } from './shared/filter-options.service';
 import { PotentialService } from '../shared/potential.service';
@@ -10,6 +10,8 @@ import { PotentialService } from '../shared/potential.service';
   providers: [FilterOptionsService, PotentialService]
 })
 export class PotentialFeedComponent implements OnInit {
+  @Output() showExtended = new EventEmitter<number>();
+
   private potentialsArr;
   private enabledRegions: string[];
   private order: string;
@@ -28,6 +30,10 @@ export class PotentialFeedComponent implements OnInit {
 
     this.$p.getPotentials()
       .then(potentials => this.potentialsArr = potentials);
+  }
+
+  toggleExtended(potential) {
+    this.showExtended.emit(potential);
   }
 
   updateFeed(region) {
