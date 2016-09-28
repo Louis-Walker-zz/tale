@@ -46,6 +46,8 @@ export class FilterOptionsService {
       enabledShortNames.push(enabled[Object.keys(enabled)[i]]["shortName"]);
     }
 
+    console.log("getEnabled", enabled, enabledShortNames, this.filterOptions["regions"]);
+
     return enabledShortNames;
   }
 
@@ -58,7 +60,7 @@ export class FilterOptionsService {
       if ( _region["shortName"] === targetRegionShort ) {
         _region["enabled"] = !(_region["enabled"]);
 
-        console.log(targetRegionShort, _region["enabled"]);
+        console.log("rET", targetRegionShort, _region["enabled"]);
       }
     }
 

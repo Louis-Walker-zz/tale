@@ -1,12 +1,13 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 
+import { FilterOptionsService } from './shared/filter-options.service';
 import { PotentialService } from '../shared/potential.service';
 
 @Component({
   selector: 'potential-feed',
   templateUrl: 'potential-feed.component.html',
   styleUrls: ['potential-feed.component.css'],
-  providers: [PotentialService]
+  providers: [FilterOptionsService, PotentialService]
 })
 export class PotentialFeedComponent implements OnInit {
   private potentialsArr;
@@ -15,13 +16,15 @@ export class PotentialFeedComponent implements OnInit {
   private showPotentials: boolean = true;
 
   constructor(
+    private $f: FilterOptionsService,
     private $p: PotentialService,
-    private $c: ChangeDetectorRef) {
+    private $c: ChangeDetectorRef
+    ) {
   }
 
   ngOnInit() {
-    this.enabledRegions = this.$p.getEnabled();
-    this.order = this.$p.getOrder();
+    this.enabledRegions = this.$f.getEnabled();
+    this.order = this.$f.getOrder();
 
     this.$p.getPotentials()
       .then(potentials => this.potentialsArr = potentials);
