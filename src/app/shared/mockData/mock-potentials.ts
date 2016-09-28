@@ -13,7 +13,8 @@ export class InMemoryDataService implements InMemoryDbService {
           },
           "author": "First",
           "timestamp": 1474289940,
-          "content": "Lorem ipsum",
+          "contentBody": "Lorem ipsum",
+          "contentImageUrl": "http://placehold.it/300x300",
           "stats": {
             "likes": 32,
             "shares": 4
@@ -32,7 +33,8 @@ export class InMemoryDataService implements InMemoryDbService {
           },
           "author": "Second",
           "timestamp": 1474289939,
-          "content": "Lorem ipsum",
+          "contentBody": "Lorem ipsum",
+          "contentImageUrl": "http://placehold.it/300x300",
           "stats": {
             "likes": 32,
             "shares": 4
@@ -51,7 +53,8 @@ export class InMemoryDataService implements InMemoryDbService {
           },
           "author": "Third",
           "timestamp": 1474289938,
-          "content": "Lorem ipsum",
+          "contentBody": "Lorem ipsum",
+          "contentImageUrl": "http://placehold.it/300x300",
           "stats": {
             "likes": 32,
             "shares": 4
@@ -70,7 +73,8 @@ export class InMemoryDataService implements InMemoryDbService {
           },
           "author": "Fourth",
           "timestamp": 1474289937,
-          "content": "Lorem ipsum",
+          "contentBody": "Lorem ipsum",
+          "contentImageUrl": "http://placehold.it/300x300",
           "stats": {
             "likes": 32,
             "shares": 4

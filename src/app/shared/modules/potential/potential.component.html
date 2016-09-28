@@ -34,6 +34,10 @@
         <div class="potential--content">
           {{potential.content}}
         </div>
+
+        <!-- Extended Tree Only -->
+        <img class="potential--content--img" [src]="potential.imgUrl"
+          *ngIf="extended === true" />
       </div>
 
       <ul class="potential--stats">

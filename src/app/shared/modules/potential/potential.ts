@@ -3,7 +3,8 @@ export interface Potential {
     "lead": PotentialLead,
     "author": string,
     "timestamp": number,
-    "content": string,
+    "contentBody": string,
+    "contentImageUrl": string,
     "stats": PotentialStats,
     "region": string,
     "tags": string[]

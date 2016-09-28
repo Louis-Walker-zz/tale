@@ -8,9 +8,13 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PotentialComponent implements OnInit {
   @Input() potential: any;
 
+  private extended: boolean;
+
   constructor() {
   }
 
-  ngOnInit() {
+  ngOnInit(ext?) {
+    // ext parameter evaluates if extended DOM tree should be loaded
+    this.extended = ( typeof ext == "boolean" ) ? ext : false;
   }
 }

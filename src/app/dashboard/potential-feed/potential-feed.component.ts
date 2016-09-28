@@ -38,8 +38,6 @@ export class PotentialFeedComponent implements OnInit {
 
     let enabledChecker = _.findIndex( _enabled, (r) => r == region );
 
-    console.log(enabledChecker);
-
     if ( enabledChecker === -1 ) {
       _enabled.push(region);
     } else {
