@@ -13,8 +13,7 @@ import { PotentialFilterComponent } from './shared/tale-potential-filter';
 
 // Pipes
 import { TalePipesModule } from '../../shared/pipes/tale-pipes.module';
-import { FilterRegionPipe } from './shared/filter-region.pipe';
-import { FilterOrderPipe } from './shared/filter-order.pipe';
+import { FilterPipe } from './shared/filter.pipe';
 
 @NgModule({
     imports: [ 
@@ -31,8 +30,7 @@ import { FilterOrderPipe } from './shared/filter-order.pipe';
         PotentialFilterComponent,
 
         // Pipes
-        FilterRegionPipe,
-        FilterOrderPipe
+        FilterPipe
     ],
 
     exports: [ 

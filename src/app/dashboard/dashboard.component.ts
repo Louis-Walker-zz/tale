@@ -1,4 +1,4 @@
-import { Component, Output, OnInit, EventEmitter, ChangeDetectorRef } from '@angular/core';
+import { Component, Output, OnInit, EventEmitter } from '@angular/core';
 
 import { emptyPotential } from '../shared/modules/potential/empty-potential';
 
@@ -12,7 +12,7 @@ export class DashboardComponent implements OnInit {
   private potential: any;
 
   constructor(
-    private $c: ChangeDetectorRef
+
   ) { }
 
   ngOnInit() {
@@ -23,12 +23,6 @@ export class DashboardComponent implements OnInit {
   showExtendedPotential(p) {
     this.hidePotential = !(this.hidePotential);
     this.potential = p;
-    
-    this.detectChanges();
-  }
-
-  detectChanges() {
-    this.$c.detectChanges();
   }
 
 }

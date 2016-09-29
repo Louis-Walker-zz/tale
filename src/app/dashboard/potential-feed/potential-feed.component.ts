@@ -12,7 +12,7 @@ import { PotentialService } from '../shared/potential.service';
 export class PotentialFeedComponent implements OnInit {
   @Output() showExtended = new EventEmitter<number>();
 
-  private potentialsArr: Object[];
+  private potentialsArr;
   private enabledRegions: string[];
   private order: string;
   private showPotentials: boolean = true;
@@ -25,35 +25,32 @@ export class PotentialFeedComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.enabledRegions = this.$f.getEnabled();
-    this.order = this.$f.getOrder();
+    this.updateFilterOptions();
 
-    this.potentialsArr = this.$p.getPotentials();
+    this.$p.getPotentials()
+      .then( (potentials) => this.potentialsArr = potentials );
   }
 
   toggleExtended(potential) {
     this.showExtended.emit(potential);
   }
 
-/* Shouldn't be required once CD bug is fixed
   updateFeed(region) {
     this.showPotentials = false;
     this.$c.detectChanges();
 
-    let _enabled = this.enabledRegions;
-
-    let enabledChecker = _.findIndex( _enabled, (r) => r == region );
-
-    if ( enabledChecker === -1 ) {
-      _enabled.push(region);
-    } else {
-      _enabled = _.remove( _enabled, (r) => r == region);
-    };
+    this.updateFilterOptions();
 
     setTimeout(() => {
       this.showPotentials = true;
       this.$c.detectChanges();
     }, 1);
   }
-*/
+
+  updateFilterOptions() {
+    this.enabledRegions = this.$f.getEnabledJuan();
+    this.order = this.$f.getOrder();
+
+    console.log("::", this.enabledRegions, this.order);
+  }
 }

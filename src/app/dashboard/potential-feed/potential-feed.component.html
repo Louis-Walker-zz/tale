@@ -1,14 +1,12 @@
-<tale-potential-filter class="tale-potentials--filter" 
-  (updateFeed)="updateFeed($event)">
+<tale-potential-filter class="tale-potentials--filter"
+  (updateFeed)="updateFeed(region)">
 </tale-potential-filter>
 
 <ul class="potentials" 
   *ngIf="showPotentials">
 
-  <potential *ngFor="let potential of ( 
-    potentialsArr
-    | filterRegion: enabledRegions
-    | filterOrder: order )" 
+  <potential *ngFor="let potential of 
+    ( potentialsArr | filter: [ enabledRegions, order ] )"
     
     [potential]="potential"
 

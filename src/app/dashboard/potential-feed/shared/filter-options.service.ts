@@ -40,7 +40,7 @@ export class FilterOptionsService {
 
   getEnabled(): string[] {
     let enabledShortNames: string[] = [],
-        enabled = _.filter(this.filterOptions["regions"], { "enabled": true })
+        enabled = _.filter(this.filterOptions["regions"], { "enabled": true });
 
     for (let i in enabled) {
       enabledShortNames.push(enabled[Object.keys(enabled)[i]]["shortName"]);
@@ -56,7 +56,7 @@ export class FilterOptionsService {
       let _region = _regions[i];
 
       if ( _region["shortName"] === targetRegionShort ) {
-        _region["enabled"] = !(_region["enabled"]);
+        _region["enabled"] = !( _region["enabled"] );
       }
     }
   }

@@ -20,10 +20,10 @@ export class FilterOrderPipe implements PipeTransform {
 
     console.log("?", orderedArr);
 
-    for ( let item in orderedArr ) {
-      newArr.push( item );
+    for ( let i in orderedArr ) {
+      newArr.push( orderedArr[i] );
 
-      console.log("!", item);
+      console.log("!", i, newArr);
     }
 
     return newArr;

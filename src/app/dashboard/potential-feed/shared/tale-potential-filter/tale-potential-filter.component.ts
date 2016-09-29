@@ -26,6 +26,6 @@ export class PotentialFilterComponent {
 
     this.$f.regionEnabledToggle(_shortName);
 
-    this.updateFeed.emit(_shortName);
+    this.updateFeed.emit();
   }
 }
