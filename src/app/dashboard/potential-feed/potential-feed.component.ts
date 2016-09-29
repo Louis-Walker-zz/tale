@@ -48,9 +48,7 @@ export class PotentialFeedComponent implements OnInit {
   }
 
   updateFilterOptions() {
-    this.enabledRegions = this.$f.getEnabledJuan();
+    this.enabledRegions = this.$f.getEnabled();
     this.order = this.$f.getOrder();
-
-    console.log("::", this.enabledRegions, this.order);
   }
 }

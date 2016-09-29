@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 
+import {LocalStorage, SessionStorage} from 'ng2-webstorage';
+
 @Injectable()
 export class FilterOptionsService {
+  @LocalStorage()
   private filterOptions: any;
 
   constructor() { 

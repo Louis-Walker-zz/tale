@@ -15,6 +15,8 @@ import { PotentialFilterComponent } from './shared/tale-potential-filter';
 import { TalePipesModule } from '../../shared/pipes/tale-pipes.module';
 import { FilterPipe } from './shared/filter.pipe';
 
+import { Ng2Webstorage } from 'ng2-webstorage';
+
 @NgModule({
     imports: [ 
         BrowserModule, 
