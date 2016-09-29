@@ -35,16 +35,10 @@ export class PotentialFeedComponent implements OnInit {
     this.showExtended.emit(potential);
   }
 
-  updateFeed(region) {
-    this.showPotentials = false;
-    this.$c.detectChanges();
-
+  updateFeed() {
     this.updateFilterOptions();
 
-    setTimeout(() => {
-      this.showPotentials = true;
-      this.$c.detectChanges();
-    }, 1);
+    this.$c.detectChanges();
   }
 
   updateFilterOptions() {
