@@ -13,11 +13,12 @@ export class FilterRegionPipe implements PipeTransform {
     ): Object[] {
     let _filtered = this.filteredPotentials;
 
+    console.log("fired region", new Date().getTime());
+
     for ( let e in enabled ) {
       _filtered.push( ..._.filter( value, { "region": enabled[e] } ) );
     }
 
     return _filtered;
   }
-
 }

@@ -13,7 +13,8 @@ export class PotentialService {
   private filterOptions: Object;
 
   constructor(
-    private http: Http) {
+    private http: Http
+  ) {
   }
 
   ngOnInit() {
@@ -21,11 +22,27 @@ export class PotentialService {
   }
 
   // !TODO: handle desired ammounts and data types on http.get
-  getPotentials(desire?: number, type?: string): Promise<Potential[]> {
-    return this.http.get(this.potentialUrl)
-      .toPromise()
-      .then(res => res.json().data as Potential[])
-      .catch(res => this.handleError());
+  getPotentials(desire?: number, type?: string) {
+    return [{
+          "_id": 0,
+          "lead": {
+            "name": "Lost and Found UK",
+            "profileUrl": "http://facebook.com",
+            "pictureUrl": "http://placehold.it/72x72",
+            "followers": 30000
+          },
+          "author": "First",
+          "timestamp": 1474289940,
+          "contentBody": "Lorem ipsum",
+          "contentImageUrl": "http://placehold.it/300x300",
+          "stats": {
+            "likes": 32,
+            "shares": 4
+          },
+          "region": "sw",
+          "regionLong": "South West",
+          "tags": ["important"]
+        }]
   }
 
   handleError() {

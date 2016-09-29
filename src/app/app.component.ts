@@ -8,9 +8,15 @@ import { Component } from '@angular/core';
 export class AppComponent {
   private extended: any = null;
 
+  private test: boolean = true;
+
   toggleExtended(p) {
     this.extended = p;
 
     console.log("OOOOOOOOOO");
+  }
+
+  lemons() {
+    this.test = !this.test;
   }
 }

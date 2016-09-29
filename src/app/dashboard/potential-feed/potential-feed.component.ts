@@ -12,7 +12,7 @@ import { PotentialService } from '../shared/potential.service';
 export class PotentialFeedComponent implements OnInit {
   @Output() showExtended = new EventEmitter<number>();
 
-  private potentialsArr;
+  private potentialsArr: Object[];
   private enabledRegions: string[];
   private order: string;
   private showPotentials: boolean = true;
@@ -28,14 +28,14 @@ export class PotentialFeedComponent implements OnInit {
     this.enabledRegions = this.$f.getEnabled();
     this.order = this.$f.getOrder();
 
-    this.$p.getPotentials()
-      .then(potentials => this.potentialsArr = potentials);
+    this.potentialsArr = this.$p.getPotentials();
   }
 
   toggleExtended(potential) {
     this.showExtended.emit(potential);
   }
 
+/* Shouldn't be required once CD bug is fixed
   updateFeed(region) {
     this.showPotentials = false;
     this.$c.detectChanges();
@@ -55,4 +55,5 @@ export class PotentialFeedComponent implements OnInit {
       this.$c.detectChanges();
     }, 1);
   }
+*/
 }

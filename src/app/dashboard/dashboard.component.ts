@@ -1,4 +1,6 @@
-import { Component, Output, OnInit, EventEmitter } from '@angular/core';
+import { Component, Output, OnInit, EventEmitter, ChangeDetectorRef } from '@angular/core';
+
+import { emptyPotential } from '../shared/modules/potential/empty-potential';
 
 @Component({
   selector: 'tale-dashboard',
@@ -6,19 +8,27 @@ import { Component, Output, OnInit, EventEmitter } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  private showPotential: boolean;
+  private hidePotential: boolean;
   private potential: any;
 
-  constructor() { }
+  constructor(
+    private $c: ChangeDetectorRef
+  ) { }
 
   ngOnInit() {
-    this.showPotential = false;
+    this.hidePotential = true;
+    this.potential = emptyPotential;
   }
 
   showExtendedPotential(p) {
-    this.showPotential = !(this.showPotential);
+    this.hidePotential = !(this.hidePotential);
     this.potential = p;
-    console.log(p);
+    
+    this.detectChanges();
+  }
+
+  detectChanges() {
+    this.$c.detectChanges();
   }
 
 }
