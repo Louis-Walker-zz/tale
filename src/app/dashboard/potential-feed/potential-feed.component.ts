@@ -28,7 +28,7 @@ export class PotentialFeedComponent implements OnInit {
     this.updateFilterOptions();
 
     this.$p.getPotentials()
-      .then( (potentials) => this.potentialsArr = potentials );
+      .then( ( potentials ) => this.potentialsArr = potentials );
   }
 
   toggleExtended(potential) {

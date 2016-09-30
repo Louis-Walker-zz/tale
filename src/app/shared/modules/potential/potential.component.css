@@ -1,40 +1,45 @@
-.potentials--item {
+.potential {
     width: 100%;
     height: 160px;
     margin-bottom: 8px;
     padding: 14px;
+    list-style: none;
 }
 
-.potential--side {
+.potential--extended {
+    height: 460px;
+}
+
+.potential__side {
     margin-right: 3%;
 }
 
-.potential--img-wrapper {
+.potential__img-wrapper {
 }
 
-.potential--img-wrapper img {
+.potential__img-wrapper img {
     width: 100%;
     height: auto;
 }
 
-.potential--meta {
+.potential__meta {
     height: 48px;
 }
 
-.potential--meta--top {
+.potential__meta__top {
     height: 22px;
 }
 
-.post--authortime {
+.post__authortime {
     font-size: 12px;
 }
 
-.potential--followers {
+.potential__followers {
     margin: -6px 0 0 0;
     text-align: right;
 }
 
-.potential--followers:after {
+.potential__followers:after {
     display: inline-block;
     content: "";
     width: 18px;
@@ -43,16 +48,16 @@
     transform: translateY(4px);
 }
 
-.potential--content-wrapper {
+.potential__content-wrapper {
 }
 
-.potential--tags {
+.potential__tags {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.potential--tags li {
+.potential__tags li {
     margin: 0 0 4px 0;
     padding: 2px 0 0 0;
     border-radius: 3px;
@@ -62,35 +67,40 @@
     text-align: center;
 }
 
-.potential--tags li[data-tag="tag-region"] {
+.potential__tags li[data-tag="tag-region"] {
     background-color: #169BD5;
 }
 
-.potential--tags li[data-tag="tag-state"] {
+.potential__tags li[data-tag="tag-state"] {
     background-color: #66A796;
 }
 
-.potential--tags li[data-tag="tag-important"] {
+.potential__tags li[data-tag="tag-important"] {
     background-color: #CC0033;
 }
 
-.potential--content {
+.potential__content {
     height: 68px;
 }
 
-.potential--stats {
+.potential__footer {
     display: flex;
+}
+
+.potential__stats {
+    display: flex;
+    width: 80%;
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.potential--stats li {
+.potential__stats li {
     margin: 0 8px 0 0;
     vertical-align: middle;
 }
 
-.potential--stats li:before {
+.potential__stats li:before {
     display: inline-block;
     content: "";
     width: 18px;
@@ -98,4 +108,21 @@
     margin-right: 4px;
     background: green;
     transform: translateY(4px);
+}
+
+.potential__open {
+    width: 74px;
+    height: 24px;
+    padding: 0;
+    background-color: #00a796;
+    border: none;
+    border-radius: 0;
+    color: white;
+    line-height: 18px;
+    text-align: center;
+    text-transform: none;
+}
+
+.hide {
+    display: none;
 }

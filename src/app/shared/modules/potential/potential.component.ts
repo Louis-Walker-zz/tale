@@ -7,14 +7,21 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PotentialComponent implements OnInit {
   @Input() potential: any;
+  @Input() extended: boolean;
 
-  private extended: boolean;
+  private showOpen: boolean = false;
 
   constructor() {
   }
 
-  ngOnInit(ext?) {
+  ngOnInit(): void {
     // ext parameter evaluates if extended DOM tree should be loaded
-    this.extended = ( typeof ext == "boolean" ) ? ext : false;
+    let _ext = this.extended;
+
+    _ext = ( typeof _ext == "boolean" ) ? _ext : false;
+  }
+
+  toggleOpen(): void {
+    this.showOpen = !this.showOpen;
   }
 }

@@ -1,27 +1,32 @@
-<li class="potentials--item component">
-    <aside class="potential--side twohalf columns">
-      <div class="potential--img-wrapper">
+<li class="potential component"
+  [class.potential--extended]="extended"
+  
+  (mouseenter)="toggleOpen()"
+  (mouseleave)="toggleOpen()"
+  >
+    <aside class="potential__side twohalf columns">
+      <div class="potential__img-wrapper">
         <img [src]="potential.lead.pictureUrl" />
       </div>
 
-      <ul class="potential--tags">
+      <ul class="potential__tags">
         <li data-tag="tag-region">{{potential.regionLong}}</li>
         <li *ngFor="let tag of potential.tags" [attr.data-tag]="'tag-' + tag">{{tag}}</li>
       </ul>
     </aside>
     
     <div class="potential-main ninehalf columns">
-      <div class="potential--meta">
-        <div class="potential--meta--top">
+      <div class="potential__meta">
+        <div class="potential__meta__top">
           <h3 class="nine columns">{{potential.lead.name}}</h3>
 
-          <span class="potential--followers three columns">
+          <span class="potential__followers three columns">
             {{potential.lead.followers}}
           </span>
         </div>
 
-        <div class="potential--meta--bottom">
-          <p class="post--authortime">
+        <div class="potential__meta__bottom">
+          <p class="post__authortime">
             Published by
             <span>{{potential.author}}</span>
             -
@@ -30,18 +35,21 @@
         </div>
       </div>
 
-      <div class="potential--content-wrapper">
-        <div class="potential--content">
+      <div class="potential__content-wrapper">
+        <div class="potential__content">
           {{potential.contentBody}}
         </div>
 
-        <!-- Extended Tree Only -->
-        <img class="potential--content--img" [src]="potential.imgUrl"
+        <img class="potential__content__img" [src]="potential.contentImageUrl"
           *ngIf="extended === true" />
       </div>
 
-      <ul class="potential--stats">
-        <li *ngFor="let stat of potential.stats | mapToIterable">{{stat}}</li>
-      </ul>
+      <div class="potential__footer">
+        <ul class="potential__stats">
+          <li *ngFor="let stat of potential.stats | mapToIterable">{{stat}}</li>
+        </ul>
+
+        <button class="potential__open" [class.hide]="!showOpen">Open</button>
+      </div>
     </div>
   </li>
