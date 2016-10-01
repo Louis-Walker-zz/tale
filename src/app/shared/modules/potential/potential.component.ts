@@ -11,8 +11,7 @@ export class PotentialComponent implements OnInit {
 
   private showOpen: boolean = false;
 
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit(): void {
     // ext parameter evaluates if extended DOM tree should be loaded
@@ -23,5 +22,8 @@ export class PotentialComponent implements OnInit {
 
   toggleOpen(): void {
     this.showOpen = !this.showOpen;
+  }
+
+  openAppeal() {
   }
 }

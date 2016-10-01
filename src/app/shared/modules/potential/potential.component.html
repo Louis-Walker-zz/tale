@@ -49,7 +49,10 @@
           <li *ngFor="let stat of potential.stats | mapToIterable">{{stat}}</li>
         </ul>
 
-        <button class="potential__open" [class.hide]="!showOpen">Open</button>
+        <button class="potential__open" 
+        [class.hide]="!showOpen"
+        (click)="openAppeal()"
+        >Open</button>
       </div>
     </div>
   </li>
