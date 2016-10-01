@@ -1,0 +1,98 @@
+.open-appeal__controls {
+    display: flex;
+    margin: 0 auto;
+}
+
+.controls__button {
+    width: 29.333333333333333333333333%;
+    margin-left: 6%;
+    border: none;
+    border-radius: 0;
+    color: white;
+}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+.controls__button:first-child {
+    margin-left: 0;
+}
+
+.controls__button--delete {
+    background-color: rgba(204, 51, 0, 1);
+}
+
+.controls__button--reunite {
+    background-color: rgba(102, 167, 150, 1);
+}
+
+.controls__button--submit {
+    background-color: rgba(22, 155, 213, 1);
+}
+
+.open-appeal__form {
+}
+
+h2 {
+    margin-bottom: 24px;
+    padding: 16px 0 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    font-size: 24px;
+    text-align: center;
+}
+
+.form__group {
+
+}
+
+.form__group__header {
+    display: flex;
+    padding: 8px 12px 0;
+}
+
+.form__group__header--facebook {
+    background-color: #3b5998;
+}
+
+.form__group__header--twitter {
+    background-color: #00aced;
+}
+
+.form__group__header--pinterest {
+    background-color: #C92228;
+}
+
+.form__group__header img {
+    width: 24px;
+    height: 24px;
+}
+
+.header__title {
+    width: 20%;
+    margin-left: 8px;
+    font-size: 16px;
+    color: white;
+}
+
+.header__title--blue {
+    color: #00A4E0;
+}
+
+.form__group__header button {
+    width: 80px;
+    height: 24px;
+    margin-left: 54%;
+    padding: 0;
+    line-height: 0;
+}
+
+.form__group__body {
+    margin-top: 12px;
+    padding: 0 18px;
+}
+
+.form__group__body input, .form__group__body textarea {
+    width: 94%;
+}
+
+.form__group__body input[type="radio"],
+.form__group__body input[type="checkbox"] {
+    width: 20px;
+}

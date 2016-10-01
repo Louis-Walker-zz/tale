@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'potential',
@@ -8,6 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PotentialComponent implements OnInit {
   @Input() potential: any;
   @Input() extended: boolean;
+
+  @Output() openAppealEvent = new EventEmitter<any>();
 
   private showOpen: boolean = false;
 
@@ -25,5 +27,7 @@ export class PotentialComponent implements OnInit {
   }
 
   openAppeal() {
+    this.openAppealEvent.emit(this.potential);
+    console.log("NO");
   }
 }

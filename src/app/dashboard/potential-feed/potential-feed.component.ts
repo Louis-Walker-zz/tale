@@ -1,4 +1,4 @@
-import { Component, Output, OnInit, ChangeDetectorRef, EventEmitter } from '@angular/core';
+import { Component, Input, Output, OnInit, ChangeDetectorRef, EventEmitter } from '@angular/core';
 
 import { FilterOptionsService } from './shared/filter-options.service';
 import { PotentialService } from '../shared/potential.service';
@@ -16,6 +16,7 @@ export class PotentialFeedComponent implements OnInit {
   private enabledRegions: string[];
   private order: string;
   private showPotentials: boolean = true;
+  private showOpenAppeal: boolean = false;
 
   constructor(
     private $f: FilterOptionsService,
@@ -44,5 +45,12 @@ export class PotentialFeedComponent implements OnInit {
   updateFilterOptions() {
     this.enabledRegions = this.$f.getEnabled();
     this.order = this.$f.getOrder();
+  }
+
+  openAppeal(potential) {
+    this.showPotentials = !this.showPotentials;
+    this.showOpenAppeal = !this.showOpenAppeal;
+
+    console.log("YES");
   }
 }

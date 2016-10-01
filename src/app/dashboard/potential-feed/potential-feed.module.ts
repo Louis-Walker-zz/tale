@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 
 // Feature Modules
 import { PotentialModule } from '../../shared/modules/potential/potential.module';
+import { OpenAppealModule } from './open-appeal';
 
 // Components
 import { PotentialFeedComponent } from './potential-feed.component';
@@ -23,7 +24,8 @@ import { Ng2Webstorage } from 'ng2-webstorage';
         FormsModule,
         HttpModule,
         TalePipesModule,
-        PotentialModule
+        PotentialModule,
+        OpenAppealModule
     ],
 
     declarations: [ 

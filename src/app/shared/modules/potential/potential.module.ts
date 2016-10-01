@@ -5,13 +5,10 @@ import { PotentialComponent } from './potential.component';
 
 import { TalePipesModule } from '../../pipes/tale-pipes.module';
 
-import { ModalModule } from "ng2-modal";
-
 @NgModule({
   imports: [
     CommonModule,
-    TalePipesModule,
-    ModalModule
+    TalePipesModule
   ],
   declarations: [PotentialComponent],
   exports: [

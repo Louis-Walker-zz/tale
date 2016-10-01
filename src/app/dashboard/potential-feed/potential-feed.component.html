@@ -1,5 +1,6 @@
 <tale-potential-filter class="tale-potentials--filter"
-  (updateFeed)="updateFeed(region)">
+  (updateFeed)="updateFeed(region)"
+  >
 </tale-potential-filter>
 
 <ul class="potentials" 
@@ -12,6 +13,10 @@
 
     (mouseenter)="toggleExtended(potential)"
     (mouseleave)="toggleExtended(potential)"
+
+    (openAppealEvent)="openAppeal(potential)"
     >
   </potential>
 </ul>
+
+<open-appeal *ngIf="showOpenAppeal"></open-appeal>

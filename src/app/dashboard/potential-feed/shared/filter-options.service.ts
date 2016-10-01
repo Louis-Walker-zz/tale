@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import {LocalStorage, SessionStorage} from 'ng2-webstorage';
+import { LocalStorage, SessionStorage } from 'ng2-webstorage';
 
 @Injectable()
 export class FilterOptionsService {

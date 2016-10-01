@@ -1,0 +1,108 @@
+<div class="open-appeal__controls">
+  <button class="controls__button controls__button--delete" type="button"
+    (click)="deleteAppeal()"
+  >Delete</button>
+
+  <button class="controls__button controls__button--reunite" type="button"
+    (click)="reuniteAppeal()"
+  >Reunite</button>
+
+  <button class="controls__button controls__button--submit" type="button"
+    (click)="submitAppeal()"
+  >Submit</button>
+</div>
+
+<form name="appealForm" class="open-appeal__form component">
+  <h2>Open Appeal</h2>
+
+  <div class="form__group">
+    <header class="form__group__header">
+      <img alt="LB" src="http://placehold.it/24x24" />
+
+      <span class="header__title header__title--blue">Lostbox</span>
+    </header>
+
+    <div class="form__group__body">
+      <input type="text" name="title" placeholder="Title" 
+        [ngModel]="appeal.title"
+      required />
+
+      <textarea name="description" placeholder="Description"
+        [ngModel]="appeal.description"
+      required></textarea>
+
+      <label>Date Missing</label>
+      <my-date-picker 
+        [options]="myDatePickerOptions"
+        (dateChanged)="onDateChanged($event.epoc)">
+      </my-date-picker>
+
+      <input type="text" name="reward" placeholder="Reward" 
+        [ngModel]="appeal.reward"
+      />
+
+      <div class="form__radio-row">
+        <label>What type of item are you posting?</label>
+
+        <input type="radio" name="itemType" value="lost" /> Lost
+        <input type="radio" name="itemType" value="found" /> Found
+        <input type="radio" name="itemType" value="success story" /> Success Story
+      </div>
+
+      <!-- Add category selection --> 
+
+      <div class="form__radio-row">
+        <label>Are they</label>
+
+        <input type="checkbox" name="microchipped"> Micro-chipped?
+        <input type="checkbox" name="neutured"> Neutured?
+      </div>
+
+      <div class="form__radio-row">
+        <label>Gender</label>
+
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+        <input type="radio" name="gender" value="unknown"> Unknown
+      </div>
+
+      <!-- Add google maps location finder -->
+    </div>
+  </div>
+
+  <div class="form__group">
+    <header class="form__group__header form__group__header--facebook"
+    (click)="toggleFacebook()">
+      <span class="header__title">Facebook</span>
+
+      <button type="button">Share</button>
+    </header>
+
+    <div class="form__group__body"
+      *ngIf="showFacebook">
+      <textarea placeholder="Start typing here..." required></textarea>
+    </div>
+  </div>
+
+   <div class="form__group">
+    <header class="form__group__header form__group__header--twitter"
+      (click)="toggleTwitter()">
+      <span class="header__title">Twitter</span>
+
+      <button type="button">Retweet</button>
+    </header>
+
+    <div class="form__group__body"
+      *ngIf="showTwitter">
+      <textarea placeholder="Start typing here..." required></textarea>
+    </div>
+  </div>
+
+   <div class="form__group">
+    <header class="form__group__header form__group__header--pinterest">
+      <span class="header__title">Pinterest</span>
+
+      <button type="button">Pin</button>
+    </header>
+  </div>
+</form>
