@@ -27,6 +27,10 @@
     background-color: rgba(22, 155, 213, 1);
 }
 
+.controls__button:hover {
+    opacity: .78;
+}
+
 .open-appeal__form {
 }
 
@@ -89,10 +93,14 @@ h2 {
 }
 
 .form__group__body input, .form__group__body textarea {
-    width: 94%;
+    width: 100%;
 }
 
 .form__group__body input[type="radio"],
 .form__group__body input[type="checkbox"] {
     width: 20px;
+}
+
+.sebm-google-map-container {
+  height: 300px;
 }
