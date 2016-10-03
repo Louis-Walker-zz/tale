@@ -26,13 +26,13 @@ html {
 }
 @media (min-width: 400px) {
     .container {
-        width: 92%;
+        width: 96%;
         padding: 0
     }
 }
 @media (min-width: 550px) {
     .container {
-        width: 92%
+        width: 96%
     }
     .column,
     .columns {

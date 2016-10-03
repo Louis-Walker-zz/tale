@@ -1,9 +1,6 @@
-.content {
+.content, .panels {
+    width: 48%;
     min-width: 320px;
-}
-
-.panels {
-    min-width: 300px;
 }
 
 .hide {

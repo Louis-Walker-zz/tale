@@ -1,17 +1,17 @@
 .potential {
+    display: block;
     width: 100%;
-    height: 160px;
+    min-height: 160px;
     margin-bottom: 8px;
-    padding: 14px;
+    padding: 2.6%;
     list-style: none;
-}
-
-.potential--extended {
-    height: 460px;
+    overflow: hidden;
 }
 
 .potential__side {
-    margin-right: 3%;
+    width: 15%;
+    min-width: 72px;
+    margin-right: 2%;
 }
 
 .potential__img-wrapper {
@@ -20,6 +20,10 @@
 .potential__img-wrapper img {
     width: 100%;
     height: auto;
+}
+
+.potential-main {
+    width: 79.8%;
 }
 
 .potential__meta {
@@ -34,18 +38,14 @@
     font-size: 12px;
 }
 
-.potential__followers {
-    margin: -6px 0 0 0;
-    text-align: right;
+h3 {
+    width: 78%;
 }
 
-.potential__followers:after {
-    display: inline-block;
-    content: "";
-    width: 18px;
-    height: 18px;
-    background: green;
-    transform: translateY(4px);
+.potential__followers {
+    width: 22%;
+    margin: -6px 0 0 0;
+    text-align: right;
 }
 
 .potential__content-wrapper {
@@ -95,24 +95,22 @@
     padding: 0;
 }
 
+.potential__stats::nth-child(1):before {
+    content: "\f100";
+    font-family: Flaticon;
+    font-size: 20px;
+    font-style: normal;
+}
+
 .potential__stats li {
     margin: 0 8px 0 0;
     vertical-align: middle;
 }
 
-.potential__stats li:before {
-    display: inline-block;
-    content: "";
-    width: 18px;
-    height: 18px;
-    margin-right: 4px;
-    background: green;
-    transform: translateY(4px);
-}
-
 .potential__open {
     width: 74px;
     height: 24px;
+    margin-bottom: 0;
     padding: 0;
     background-color: #00a796;
     border: none;

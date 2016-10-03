@@ -68,6 +68,16 @@ h2 {
     height: 24px;
 }
 
+.form__group__header button {
+    color: white;
+}
+
+.form__group__header button:hover {
+    background-color: white;
+    border-color: white;
+    color: gray;
+}
+
 .header__title {
     width: 20%;
     margin-left: 8px;

@@ -2,8 +2,12 @@
   <form name="createAppeal">
     <img [src]="spritify(currentPlatform)">
 
-    <input name="createAppeal" [(ngModel)]="appealUrl" placeholder="Enter appeal URL..."/>
+    <input name="createAppeal" 
+      [(ngModel)]="appealUrl" 
+    placeholder="Enter appeal URL..." />
 
-    <button type="button" (click)="openAppeal()">+</button>
+    <button type="button" class="flaticon-plus-black-symbol"
+      (click)="openAppeal()"
+    ></button>
   </form>
 </div>

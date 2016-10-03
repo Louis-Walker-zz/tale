@@ -4,7 +4,7 @@
   (mouseenter)="toggleOpen()"
   (mouseleave)="toggleOpen()"
   >
-    <aside class="potential__side twohalf columns">
+    <aside class="potential__side columns">
       <div class="potential__img-wrapper">
         <img [src]="potential.lead.pictureUrl" />
       </div>
@@ -15,12 +15,12 @@
       </ul>
     </aside>
     
-    <div class="potential-main ninehalf columns">
+    <div class="potential-main columns">
       <div class="potential__meta">
         <div class="potential__meta__top">
-          <h3 class="nine columns">{{potential.lead.name}}</h3>
+          <h3 class="columns">{{potential.lead.name}}</h3>
 
-          <span class="potential__followers three columns">
+          <span class="potential__followers flaticon-group-profile-users three columns">
             {{potential.lead.followers}}
           </span>
         </div>

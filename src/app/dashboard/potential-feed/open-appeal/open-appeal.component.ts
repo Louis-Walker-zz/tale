@@ -43,18 +43,6 @@ export class OpenAppealComponent implements OnInit {
   ngOnInit() {
   }
 
-  toggleBool( slug ) {
-    switch( slug ) {
-      // Hide DOM
-      case     "facebook": this.showFacebook        = !this.showFacebook;        break;
-      case      "twitter": this.showTwitter         = !this.showTwitter;         break;
-
-      // Appeal Key Value Toggle
-      case "microchipped": this.appeal.microchipped = !this.appeal.microchipped; break;
-      case     "neutured": this.appeal.neutured     = !this.appeal.neutured;     break;
-    }
-  }
-
   deleteAppeal() {
     // this.$a.del();
   }
@@ -64,7 +52,7 @@ export class OpenAppealComponent implements OnInit {
   }
 
   submitAppeal() {
-    let _genderChecked = document.querySelector('input[name="gender"]:checked') as HTMLInputElement;
+    let _genderChecked = <HTMLInputElement> document.querySelector('input[name="gender"]:checked');
     
     this.appeal.gender = _genderChecked.value;
 
@@ -79,5 +67,17 @@ export class OpenAppealComponent implements OnInit {
     let location = place['geometry']['location'];
 
     this.appeal.location = new Array(location.lat(), location.lng());
+  }
+
+  toggleBool( slug ) {
+    switch( slug ) {
+      // Hide DOM
+      case     "facebook": this.showFacebook        = !this.showFacebook;        break;
+      case      "twitter": this.showTwitter         = !this.showTwitter;         break;
+
+      // Appeal Key Value Toggle
+      case "microchipped": this.appeal.microchipped = !this.appeal.microchipped; break;
+      case     "neutured": this.appeal.neutured     = !this.appeal.neutured;     break;
+    }
   }
 }

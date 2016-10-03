@@ -40,12 +40,16 @@
 }
 
 .profile--header--logout--button {
-    width: 80px;
+    width: 60px;
     height: 32px;
-    padding-left: 0;
+    padding: 0;
     border: none;
     font: 12px CamptonLight;
     text-transform: none;
+}
+
+.profile--header--logout--button:after {
+    font-size: 12px;
 }
 
 .profile--stats {
