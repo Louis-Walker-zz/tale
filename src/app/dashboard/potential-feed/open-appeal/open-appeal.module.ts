@@ -4,6 +4,7 @@ import { FormsModule }   from '@angular/forms';
 
 import { MyDatePickerModule } from 'mydatepicker/src/my-date-picker/my-date-picker.module';
 import { AgmCoreModule } from 'angular2-google-maps/core';
+import { GoogleplaceDirective } from '../../../../../node_modules/angular2-google-map-auto-complete/directives/googleplace.directive';
 
 import { OpenAppealComponent } from './open-appeal.component';
 
@@ -16,7 +17,10 @@ import { OpenAppealComponent } from './open-appeal.component';
       apiKey: 'AIzaSyAlQFAxlMTwSnTJ6nXsuBoyMRN1VtmWER0'
     })
   ],
-  declarations: [OpenAppealComponent],
+  declarations: [
+    GoogleplaceDirective,
+    OpenAppealComponent
+  ],
   exports: [
     OpenAppealComponent
   ]

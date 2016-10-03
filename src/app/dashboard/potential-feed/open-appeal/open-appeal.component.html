@@ -65,10 +65,14 @@
         <input type="radio" name="gender" value="female"> Female
         <input type="radio" name="gender" value="unknown"> Unknown
       </div>
-
-      <sebm-google-map [latitude]="54.9783" [longitude]="1.6178">
-        <sebm-google-map-marker [latitude]="54.9783" [longitude]="1.6178"></sebm-google-map-marker>
-      </sebm-google-map>
+      
+      <input 
+        type="text" 
+        [(ngModel)]="address"
+        (setAddress)="getAddress($event)"
+        [ngModelOptions]="{standalone: true}"
+        googleplace
+      />
     </div>
   </div>
 

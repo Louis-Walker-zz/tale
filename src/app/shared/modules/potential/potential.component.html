@@ -50,6 +50,7 @@
         </ul>
 
         <button class="potential__open" 
+        *ngIf="!extended"
         [class.hide]="!showOpen"
         (click)="openAppeal()"
         >Open</button>

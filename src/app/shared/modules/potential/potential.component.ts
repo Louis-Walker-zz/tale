@@ -28,6 +28,5 @@ export class PotentialComponent implements OnInit {
 
   openAppeal() {
     this.openAppealEvent.emit(this.potential);
-    console.log("NO");
   }
 }

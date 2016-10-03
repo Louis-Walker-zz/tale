@@ -22,12 +22,14 @@ export class OpenAppealComponent implements OnInit {
 
   private appeal: Appeal;
 
+  public address: Object;
+
   constructor() {
     this.appeal = {
       title: "",
       description: "",
       date: 0,
-      itemType: ""
+      itemType: "media" // Temp value until categories solution
     }
   }
 
@@ -56,5 +58,13 @@ export class OpenAppealComponent implements OnInit {
 
   onDateChanged(e) {
     console.log(e.epoc);
+  }
+
+  getAddress( place:Object ) {       
+    this.address = place['formatted_address'];
+    var location = place['geometry']['location'];
+    var lat =  location.lat();
+    var lng = location.lng();
+    console.log("Address Object", lat, lng);
   }
 }

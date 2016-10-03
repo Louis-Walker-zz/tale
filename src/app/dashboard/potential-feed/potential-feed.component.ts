@@ -50,7 +50,5 @@ export class PotentialFeedComponent implements OnInit {
   openAppeal(potential) {
     this.showPotentials = !this.showPotentials;
     this.showOpenAppeal = !this.showOpenAppeal;
-
-    console.log("YES");
   }
 }
