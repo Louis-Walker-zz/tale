@@ -1,20 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AppealService } from './appeal.service';
+
 interface Appeal {
   title: string;
   description: string;
-  date: number;
+  timestamp: number;
   reward?: string;
   itemType: string;
   microchipped?: boolean;
   neutured?: boolean;
   gender?: string;
+  location?: number[];
 }
 
 @Component({
   selector: 'open-appeal',
   templateUrl: './open-appeal.component.html',
-  styleUrls: ['./open-appeal.component.css']
+  styleUrls: ['./open-appeal.component.css'],
+  providers: [ AppealService ]
 })
 export class OpenAppealComponent implements OnInit {
   private showFacebook: boolean = false;
@@ -24,47 +28,56 @@ export class OpenAppealComponent implements OnInit {
 
   public address: Object;
 
-  constructor() {
+  constructor(
+    private $a: AppealService
+  ) {
     this.appeal = {
       title: "",
       description: "",
-      date: 0,
-      itemType: "media" // Temp value until categories solution
+      timestamp: 0,
+      itemType: "", // Temp value until categories solution
+      location: []
     }
   }
 
   ngOnInit() {
   }
 
-  toggleFacebook() {
-    this.showFacebook = !this.showFacebook;
-  }
+  toggleBool( slug ) {
+    switch( slug ) {
+      // Hide DOM
+      case     "facebook": this.showFacebook        = !this.showFacebook;        break;
+      case      "twitter": this.showTwitter         = !this.showTwitter;         break;
 
-  toggleTwitter() {
-    this.showTwitter = !this.showTwitter;
+      // Appeal Key Value Toggle
+      case "microchipped": this.appeal.microchipped = !this.appeal.microchipped; break;
+      case     "neutured": this.appeal.neutured     = !this.appeal.neutured;     break;
+    }
   }
 
   deleteAppeal() {
-
+    // this.$a.del();
   }
 
   reuniteAppeal() {
-    
+    // this.$a.reunite();
   }
 
   submitAppeal() {
+    let _genderChecked = document.querySelector('input[name="gender"]:checked') as HTMLInputElement;
     
+    this.appeal.gender = _genderChecked.value;
+
+    this.$a.submit( this.appeal );
   }
 
-  onDateChanged(e) {
-    console.log(e.epoc);
+  onDateChanged( epoc ) {
+    this.appeal.timestamp = epoc;
   }
 
-  getAddress( place:Object ) {       
-    this.address = place['formatted_address'];
-    var location = place['geometry']['location'];
-    var lat =  location.lat();
-    var lng = location.lng();
-    console.log("Address Object", lat, lng);
+  getAddress( place: Object ) {       
+    let location = place['geometry']['location'];
+
+    this.appeal.location = new Array(location.lat(), location.lng());
   }
 }

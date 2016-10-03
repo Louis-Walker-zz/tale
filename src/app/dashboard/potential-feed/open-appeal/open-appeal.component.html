@@ -24,29 +24,36 @@
 
     <div class="form__group__body">
       <input type="text" name="title" placeholder="Title" 
-        [ngModel]="appeal.title"
+        [(ngModel)]="appeal.title"
       required />
 
       <textarea name="description" placeholder="Description"
-        [ngModel]="appeal.description"
+        [(ngModel)]="appeal.description"
       required></textarea>
 
       <label>Date Missing</label>
       <my-date-picker 
         [options]="myDatePickerOptions"
-        (dateChanged)="onDateChanged($event.epoc)">
+        (dateChanged)="onDateChanged( $event.epoc )"
+      >
       </my-date-picker>
 
       <input type="text" name="reward" placeholder="Reward" 
-        [ngModel]="appeal.reward"
+        [(ngModel)]="appeal.reward"
       />
 
       <div class="form__radio-row">
         <label>What type of item are you posting?</label>
 
-        <input type="radio" name="itemType" value="lost" /> Lost
-        <input type="radio" name="itemType" value="found" /> Found
-        <input type="radio" name="itemType" value="success story" /> Success Story
+        <input type="radio" name="itemType" value="lost" 
+          (click)="appeal.itemType = 'l'"
+        /> Lost
+        <input type="radio" name="itemType" value="found" 
+          (click)="appeal.itemType = 'f'"
+        /> Found
+        <input type="radio" name="itemType" value="success story" 
+          (click)="appeal.itemType = 's'"
+        /> Success Story
       </div>
 
       <!-- Add category selection --> 
@@ -54,8 +61,13 @@
       <div class="form__radio-row">
         <label>Are they</label>
 
-        <input type="checkbox" name="microchipped"> Micro-chipped?
-        <input type="checkbox" name="neutured"> Neutured?
+        <input type="checkbox" name="microchipped"
+          (click)="toggleBool('microchipped')"
+        > Micro-chipped?
+
+        <input type="checkbox" name="neutured"
+          (click)="toggleBool('neutured')"
+        > Neutured?
       </div>
 
       <div class="form__radio-row">
@@ -78,7 +90,7 @@
 
   <div class="form__group">
     <header class="form__group__header form__group__header--facebook"
-    (click)="toggleFacebook()">
+    (click)="toggleBool('facebook')">
       <span class="header__title">Facebook</span>
 
       <button type="button">Share</button>
@@ -92,7 +104,7 @@
 
    <div class="form__group">
     <header class="form__group__header form__group__header--twitter"
-      (click)="toggleTwitter()">
+      (click)="toggleBool('twitter')">
       <span class="header__title">Twitter</span>
 
       <button type="button">Retweet</button>
