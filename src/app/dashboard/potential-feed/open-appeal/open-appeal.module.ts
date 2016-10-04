@@ -14,7 +14,6 @@ import { OpenAppealComponent } from './open-appeal.component';
     MyDatePickerModule
   ],
   declarations: [
-    GoogleplaceDirective,
     OpenAppealComponent
   ],
   exports: [

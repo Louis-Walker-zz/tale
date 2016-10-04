@@ -18,6 +18,15 @@ import { FilterPipe } from './shared/filter.pipe';
 
 import { Ng2Webstorage } from 'ng2-webstorage';
 
+import { AngularFireModule } from 'angularfire2';
+
+export const firebaseConfig = {
+  apiKey: 'AIzaSyD53_s3MKn6OcQfsJ1JW0YtkExVaU5naAw',
+  authDomain: 'tale-145122.firebaseapp.com',
+  databaseURL: 'https://tale-145122.firebaseio.com',
+  storageBucket: 'tale-145122.appspot.com'
+};
+
 @NgModule({
     imports: [ 
         BrowserModule, 
@@ -25,7 +34,8 @@ import { Ng2Webstorage } from 'ng2-webstorage';
         HttpModule,
         TalePipesModule,
         PotentialModule,
-        OpenAppealModule
+        OpenAppealModule,
+        AngularFireModule.initializeApp(firebaseConfig)
     ],
 
     declarations: [ 
