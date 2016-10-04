@@ -28,8 +28,18 @@
   font-style: normal;
 }
 
-.flaticon-arrows:before { content: "\f100"; }
-.flaticon-black:before { content: "\f101"; }
+.flaticon-stat:before {
+  margin-right: 6px;
+  font-size: 16px;
+}
+
+.flaticon-stat:nth-child(1):before {
+   content: "\f100";
+}
+
+.flaticon-stat:nth-child(2):before {
+   content: "\f101";
+}
 
 .flaticon-arrows:before { content: "\f100"; }
 .flaticon-black:before { content: "\f101"; }
@@ -37,8 +47,7 @@
 .flaticon-plus-black-symbol:before { content: "\f105"; font-size: 6px; vertical-align: top; }
 .flaticon-share-option:before { content: "\f106"; }
 
-.flaticon-arrows:after { content: "\f100"; }
 .flaticon-black:after { content: "\f101"; }
 .flaticon-correct-symbol:after { content: "\f102"; }
 .flaticon-group-profile-users:after { content: "\f103"; vertical-align: middle; color: #00A4E0; }
-.flaticon-sign-out-option:after { content: "\f107"; margin-left: 4px; }
+.flaticon-sign-out-option:after { content: "\f106"; margin-left: 4px; }

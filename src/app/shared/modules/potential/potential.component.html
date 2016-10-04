@@ -46,7 +46,9 @@
 
       <div class="potential__footer">
         <ul class="potential__stats">
-          <li *ngFor="let stat of potential.stats | mapToIterable">{{stat}}</li>
+          <li *ngFor="let stat of potential.stats | mapToIterable"
+            class="flaticon-stat"
+          >{{stat}}</li>
         </ul>
 
         <button class="potential__open" 
