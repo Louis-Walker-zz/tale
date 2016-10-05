@@ -13,6 +13,9 @@ import { Routing }  from './app.routing';
 // Root Component
 import { AppComponent } from './app.component';
 
+// Login Module
+import { LoginModule } from './login/login.module';
+
 // View Modules
 import { DashboardModule } from './dashboard/dashboard.module';
 import { AppealsModule } from './appeals/appeals.module';
@@ -31,6 +34,9 @@ import { TaleMenuModule } from './shared/modules/tale-menu/tale-menu.module';
     // Soft Modules
     Routing, 
     InMemoryWebApiModule.forRoot(InMemoryDataService),
+
+    // Login Module
+    LoginModule,
 
     // Views
     DashboardModule,
