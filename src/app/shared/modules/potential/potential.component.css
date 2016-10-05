@@ -79,6 +79,10 @@ h3 {
     background-color: #CC0033;
 }
 
+.potential__followers {
+    font-size: 13px;
+}
+
 .potential__content {
     height: 68px;
 }
