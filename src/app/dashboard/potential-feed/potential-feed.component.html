@@ -20,3 +20,5 @@
 </ul>
 
 <open-appeal *ngIf="showOpenAppeal"></open-appeal>
+
+<span>{{ ( users | async )?.root.appeals.openAID }}</span>

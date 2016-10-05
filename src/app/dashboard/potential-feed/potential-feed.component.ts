@@ -3,7 +3,7 @@ import { Component, Input, Output, OnInit, ChangeDetectorRef, EventEmitter } fro
 import { FilterOptionsService } from './shared/filter-options.service';
 import { PotentialService } from '../shared/potential.service';
 
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 
 @Component({
   selector: 'potential-feed',
@@ -20,7 +20,7 @@ export class PotentialFeedComponent implements OnInit {
   private showPotentials: boolean = true;
   private showOpenAppeal: boolean = false;
 
-  items: FirebaseListObservable<any[]>;
+  users: FirebaseObjectObservable<any[]>;
 
   constructor(
     private $f: FilterOptionsService,
@@ -29,7 +29,7 @@ export class PotentialFeedComponent implements OnInit {
     private $a: AngularFire
     ) {
 
-    this.items = $a.database.list('/items');
+    this.users = $a.database.object("/users");
   }
 
   ngOnInit() {
