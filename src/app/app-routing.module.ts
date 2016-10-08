@@ -1,12 +1,16 @@
-import { ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
+import { AngularFire } from 'angularfire2';
+
+import { AuthGuardService } from './shared/services/auth-guard.service';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppealsComponent } from './appeals/appeals.component';
 import { LeadsComponent } from './leads/leads.component';
 import { UsersComponent } from './users/users.component';
 
-const taleRoutes: Routes = [
+const routes: Routes = [
     { 
         path: "",
         redirectTo: '/dashboard',
@@ -14,7 +18,10 @@ const taleRoutes: Routes = [
     },
     { 
         path: "dashboard",
-        component: DashboardComponent
+        component: DashboardComponent,
+        canActivate: [
+            AuthGuardService
+        ]
     },
     { 
         path: "appeals",
@@ -30,4 +37,10 @@ const taleRoutes: Routes = [
     }
 ]
 
-export const Routing: ModuleWithProviders = RouterModule.forRoot(taleRoutes);
+@NgModule({
+  imports: [ RouterModule.forRoot(routes) ],
+  exports: [ RouterModule ],
+  providers: [ AuthGuardService, AngularFire ]
+})
+export class TaleRoutingModule { 
+}  

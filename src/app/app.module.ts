@@ -8,7 +8,7 @@ import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
 import { InMemoryDataService }  from './shared/mockData/mock-potentials';
 
 // Soft Modules
-import { Routing }  from './app.routing';
+import { TaleRoutingModule }  from './app-routing.module';
 
 // Root Component
 import { AppComponent } from './app.component';
@@ -32,7 +32,7 @@ import { TaleMenuModule } from './shared/modules/tale-menu/tale-menu.module';
     FormsModule, 
 
     // Soft Modules
-    Routing, 
+    TaleRoutingModule, 
     InMemoryWebApiModule.forRoot(InMemoryDataService),
 
     // Login Module
