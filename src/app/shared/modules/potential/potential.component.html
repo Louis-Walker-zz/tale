@@ -15,7 +15,7 @@
       </ul>
     </aside>
     
-    <div class="potential-main columns">
+    <div class="potential__main columns">
       <div class="potential__meta">
         <div class="potential__meta__top">
           <h3 class="columns">{{potential.lead.name}}</h3>
@@ -36,12 +36,15 @@
       </div>
 
       <div class="potential__content-wrapper">
-        <div class="potential__content">
+        <article class="potential__content"
+          [class.potential__content--extended]="extended"
+        >
           {{potential.contentBody}}
-        </div>
+        </article>
 
         <img class="potential__content__img" [src]="potential.contentImageUrl"
-          *ngIf="extended === true" />
+          *ngIf="extended === true" 
+        />
       </div>
 
       <div class="potential__footer">

@@ -3,6 +3,10 @@
     min-width: 320px;
 }
 
+.menu {
+    min-width: 280px;
+}
+
 .hide {
     display: none;
 }

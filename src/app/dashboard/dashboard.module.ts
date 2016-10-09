@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 // Feature Modules
 import { CreateAppealModule } from './tale-create-appeal';
 import { PotentialFeedModule } from './potential-feed';
+import { TaleMenuModule } from '../shared/modules/tale-menu/tale-menu.module';
 
 // Local Components
 import { DashboardComponent } from './';
@@ -19,7 +20,8 @@ import { PotentialModule } from '../shared/modules/potential';
         // Feature Modules
         CreateAppealModule,
         PotentialFeedModule,
-        PotentialModule
+        PotentialModule,
+        TaleMenuModule
     ],
 
     declarations: [ 

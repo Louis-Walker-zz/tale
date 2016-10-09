@@ -5,10 +5,13 @@ import { FormsModule } from '@angular/forms';
 
 import { UsersComponent } from './';
 
+import { TaleMenuModule } from '../shared/modules/tale-menu/tale-menu.module';
+
 @NgModule({
     imports: [ 
         BrowserModule, 
-        FormsModule
+        FormsModule,
+        TaleMenuModule
     ],
 
     declarations: [ 

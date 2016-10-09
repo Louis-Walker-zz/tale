@@ -1,12 +1,22 @@
-<div class="content columns">
-    <tale-create-appeal></tale-create-appeal>
-    <potential-feed (showExtended)="showExtendedPotential($event)"></potential-feed>
-</div>
+<div class="container">
+  <div class="row">
+    <div class="menu three columns">
+      <tale-menu></tale-menu>
+    </div>
 
-<div class="panels columns">
-    <potential
-    [class.hide]="hidePotential"
-    [potential]="potential"
-    [extended]="true">
-    </potential>
+    <div class="nine columns">
+        <div class="content columns">
+            <tale-create-appeal></tale-create-appeal>
+            <potential-feed (showExtended)="showExtendedPotential($event)"></potential-feed>
+        </div>
+
+        <div class="panels columns">
+            <potential
+            [class.hide]="hidePotential"
+            [potential]="potential"
+            [extended]="true">
+            </potential>
+        </div>
+    </div>
+  </div>
 </div>

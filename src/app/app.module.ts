@@ -22,9 +22,6 @@ import { AppealsModule } from './appeals/appeals.module';
 import { LeadsModule } from './leads/leads.module';
 import { UsersModule } from './users/users.module';
 
-// Feature Modules
-import { TaleMenuModule } from './shared/modules/tale-menu/tale-menu.module';
-
 @NgModule({
   imports: [ 
     // Angular Modules
@@ -42,10 +39,7 @@ import { TaleMenuModule } from './shared/modules/tale-menu/tale-menu.module';
     DashboardModule,
     AppealsModule,
     LeadsModule,
-    UsersModule,
-
-    // Feature Modules
-    TaleMenuModule
+    UsersModule
   ],
 
   declarations: [ 

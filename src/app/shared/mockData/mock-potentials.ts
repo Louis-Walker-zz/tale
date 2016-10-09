@@ -13,7 +13,7 @@ export class InMemoryDataService implements InMemoryDbService {
           },
           "author": "First",
           "timestamp": 1474289940,
-          "contentBody": "Lorem ipsum",
+          "contentBody": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ",
           "contentImageUrl": "http://placehold.it/240x240",
           "stats": {
             "likes": 32,

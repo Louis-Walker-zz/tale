@@ -4,6 +4,7 @@
     min-height: 160px;
     margin-bottom: 8px;
     padding: 2.6%;
+    padding-bottom: 6px;
     list-style: none;
     overflow: hidden;
 }
@@ -22,7 +23,7 @@
     height: auto;
 }
 
-.potential-main {
+.potential__main {
     width: 79.8%;
 }
 
@@ -46,9 +47,6 @@ h3 {
     width: 22%;
     margin: -6px 0 0 0;
     text-align: right;
-}
-
-.potential__content-wrapper {
 }
 
 .potential__tags {
@@ -83,12 +81,26 @@ h3 {
     font-size: 13px;
 }
 
+.potential__content-wrapper {
+}
+
 .potential__content {
-    height: 68px;
+    height: 74px;
+    overflow: hidden;
+}
+
+.potential__content--extended {
+    height: auto;
+    overflow: initial;
+}
+
+.potential__content-wrapper img {
+    margin-top: 6px;
 }
 
 .potential__footer {
     display: flex;
+    margin-top: 4px;
 }
 
 .potential__stats {
