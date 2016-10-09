@@ -1,3 +1,27 @@
-<p>
-  login works!
-</p>
+<div class="login component">
+  <div class="login__brand four columns">
+    <img alt="Lostbox" src="http://placehold.it/128x128">
+  </div>
+
+  <div class="login__body eight columns">
+    <header>
+      <h1>Tale</h1>
+
+      <span class="header__subtitle">Centralised Appeals</span>
+    </header>
+
+    <div class="login__actions">
+      <button type="button" class="login__button"
+        (click)="login()"
+      >
+        Login
+      </button>
+
+      <button type="button" class="login__button"
+        (click)="newAccount()"
+      >
+        Sign up
+      </button>
+    </div>
+  </div>
+</div>
