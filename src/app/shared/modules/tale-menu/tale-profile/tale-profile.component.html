@@ -1,11 +1,11 @@
 <div class="profile component">
   <div class="profile--header">
-    <img alt="" [src]="profile.pictureURL" />
+    <img alt=""  />
 
     <div class="profile--header--meta">
-      <h1>{{profile.username}}</h1>
+      <h1></h1>
 
-      <span class="role">{{profile.role}}</span>
+      <span class="role"></span>
     </div>
 
     <div class="profile--header--logout">
@@ -14,6 +14,8 @@
   </div>
 
   <ul class="profile--stats">
-      <li class="profile--stats--integer" *ngFor="let stat of profile.stats | mapToIterable; let i = index" [attr.data-statname]="profileStatsKey(i)">{{stat}}</li>
+      <li class="profile--stats--integer" ></li>
   </ul>
 </div>
+
+<span>{{ profile | async }}</span>

@@ -16,12 +16,6 @@ import { PotentialFilterComponent } from './shared/tale-potential-filter';
 import { TalePipesModule } from '../../shared/pipes/tale-pipes.module';
 import { FilterPipe } from './shared/filter.pipe';
 
-import { Ng2Webstorage } from 'ng2-webstorage';
-
-import { AngularFireModule } from 'angularfire2';
-
-import { firebaseConfig } from '../../shared/firebase-config';
-
 @NgModule({
     imports: [ 
         BrowserModule, 
@@ -29,8 +23,7 @@ import { firebaseConfig } from '../../shared/firebase-config';
         HttpModule,
         TalePipesModule,
         PotentialModule,
-        OpenAppealModule,
-        AngularFireModule.initializeApp(firebaseConfig)
+        OpenAppealModule
     ],
 
     declarations: [ 

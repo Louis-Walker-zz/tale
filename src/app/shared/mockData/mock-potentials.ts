@@ -4,7 +4,7 @@ export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     let potentials = [
         {
-          "_id": 0,
+          "_pid": 0,
           "lead": {
             "name": "Lost and Found UK",
             "profileUrl": "http://facebook.com",
@@ -24,7 +24,7 @@ export class InMemoryDataService implements InMemoryDbService {
           "tags": ["important"]
         },
         {
-          "_id": 1,
+          "_pid": 1,
           "lead": {
             "name": "Lost and Found UK",
             "profileUrl": "http://facebook.com",
@@ -44,7 +44,7 @@ export class InMemoryDataService implements InMemoryDbService {
           "tags": ["important"]
         },
         {
-          "_id": 2,
+          "_pid": 2,
           "lead": {
             "name": "Lost and Found UK",
             "profileUrl": "http://facebook.com",
@@ -64,7 +64,7 @@ export class InMemoryDataService implements InMemoryDbService {
           "tags": ["important"]
         },
         {
-          "_id": 3,
+          "_pid": 3,
           "lead": {
             "name": "Lost and Found UK",
             "profileUrl": "http://facebook.com",

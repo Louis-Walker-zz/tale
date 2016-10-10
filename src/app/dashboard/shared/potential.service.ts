@@ -22,11 +22,11 @@ export class PotentialService {
   }
 
   // !TODO: handle desired ammounts and data types on http.get
-  getPotentials(desire?: number, type?: string): Promise<Potential[]> {
-    return this.http.get('app/potentials')
+  getPotentials(desire?: number, type?: string): any {
+    /*return this.http.get('app/potentials')
       .toPromise()
       .then(res => res.json().data as Potential[])
-      .catch(this.handleError);
+      .catch(this.handleError);*/
   }
 
   handleError() {

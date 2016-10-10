@@ -4,8 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 // Mock API
-import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
-import { InMemoryDataService }  from './shared/mockData/mock-potentials';
+//import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
+//import { InMemoryDataService }  from './shared/mockData/mock-potentials';
 
 // Soft Modules
 import { TaleRoutingModule }  from './app-routing.module';
@@ -22,6 +22,9 @@ import { AppealsModule } from './appeals/appeals.module';
 import { LeadsModule } from './leads/leads.module';
 import { UsersModule } from './users/users.module';
 
+import { AngularFireModule } from 'angularfire2';
+import { firebaseConfig } from './shared/firebase-config';
+
 @NgModule({
   imports: [ 
     // Angular Modules
@@ -30,7 +33,6 @@ import { UsersModule } from './users/users.module';
 
     // Soft Modules
     TaleRoutingModule, 
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
 
     // Login Module
     LoginModule,
@@ -39,7 +41,9 @@ import { UsersModule } from './users/users.module';
     DashboardModule,
     AppealsModule,
     LeadsModule,
-    UsersModule
+    UsersModule,
+
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
 
   declarations: [ 
