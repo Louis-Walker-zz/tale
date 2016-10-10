@@ -24,7 +24,7 @@ export class AuthGuardService implements CanActivate {
   canActivate(): Observable<boolean> {
     return this.$af.auth
       .take(1)
-      .map(( authState: FirebaseAuthState ) => { this.uid = authState.uid; return !!authState } )
+      .map(( authState: FirebaseAuthState ) => !!authState )
       .do( authenticated => {
         if ( !authenticated ) {
           this.routeToLogin();

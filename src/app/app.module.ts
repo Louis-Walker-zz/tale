@@ -24,6 +24,7 @@ import { UsersModule } from './users/users.module';
 
 import { AngularFireModule } from 'angularfire2';
 import { firebaseConfig } from './shared/firebase-config';
+import { firebaseAuthConfig } from './shared/firebase-auth-config';
 
 @NgModule({
   imports: [ 
@@ -43,7 +44,7 @@ import { firebaseConfig } from './shared/firebase-config';
     LeadsModule,
     UsersModule,
 
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig)
   ],
 
   declarations: [ 

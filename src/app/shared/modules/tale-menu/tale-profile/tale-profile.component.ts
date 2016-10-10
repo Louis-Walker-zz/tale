@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Observable } from 'rxjs/Observable';
+
 import * as _ from 'lodash';
 
 import { LocalStorageService } from 'ng2-webstorage';
@@ -15,9 +17,7 @@ import { Profile, ProfileStats } from './profile';
   providers: [ LocalStorageService, ProfileService ]
 })
 export class ProfileComponent implements OnInit {
-  uid: any;
-  
-  profile: any;
+  profile: Observable<Profile>;
   profileStats: ProfileStats;
 
   constructor(
@@ -28,11 +28,7 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.$l.clear("juan");
-
-    console.log(this.uid);
-
-    this.profile = this.$p.getProfile( this.uid );
+    this.profile = this.$p.getProfile();
   }
 
   // Pass the index from ng2's iteration and return the index of profile.stats key

@@ -3,9 +3,9 @@
     <img alt=""  />
 
     <div class="profile--header--meta">
-      <h1></h1>
+      <h1>{{ ( profile | async )?.name }}</h1>
 
-      <span class="role"></span>
+      <span class="role">{{ ( profile | async )?.role }}</span>
     </div>
 
     <div class="profile--header--logout">
@@ -18,4 +18,4 @@
   </ul>
 </div>
 
-<span>{{ profile | async }}</span>
+<span>{{ profile | async | json }}</span>
