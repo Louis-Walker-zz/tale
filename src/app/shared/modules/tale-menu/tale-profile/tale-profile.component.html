@@ -1,6 +1,6 @@
 <div class="profile component">
-  <div class="profile--header">
-    <img alt=""  />
+  <div class="profile__header">
+    <img alt="" [src]="( profile | async )?.pictureUrl" />
 
     <div class="profile--header--meta">
       <h1>{{ ( profile | async )?.name }}</h1>
@@ -9,12 +9,17 @@
     </div>
 
     <div class="profile--header--logout">
-      <button class="profile--header--logout--button flaticon-sign-out-option" type="button" (onclick)="logout()">Logout</button>
+      <button class="profile--header--logout--button flaticon-sign-out-option" type="button" (click)="logout()">Logout</button>
     </div>
+
+    {{ ( profile | async )?.stats | json }}
   </div>
 
   <ul class="profile--stats">
-      <li class="profile--stats--integer" ></li>
+      <li class="profile--stats--integer" 
+        *ngFor="let stat of ( profile.stats | async ) | mapToIterable; let i = index"
+        [attr.data-statname]="profileStatsKey(i)"
+      >{{stat}}</li>
   </ul>
 </div>
 

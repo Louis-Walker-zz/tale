@@ -17,6 +17,8 @@ export class AuthService {
 
   logout() {
     this.$af.auth.logout();
+
+    this.$r.navigate(["login"]);
   }
 
   // Gets firebase authState and routes if authenticated passes check

@@ -22,7 +22,17 @@ export class ProfileService {
   getProfile(): Observable<Object> {
     return this.$af.database.object('/users')
       .take(1)
-      .map( users => _.get( users, this.uid ) )
+      .map( users => {
+        let authUser = _.get( users, this.uid );
+
+        authUser["pictureUrl"] = "https://scontent.xx.fbcdn.net/v/t1.0-1/p100x100/13139307_1538140546489134_5924680215206630446_n.jpg?oh=6f85cdcec5020c3e12061293c18a3c73&oe=58A34142";
+
+        authUser["stats"] = this.statFactory( authUser );
+
+        console.log(authUser);
+
+        return authUser;
+      })
       .do( user => {
         
       });
@@ -44,6 +54,18 @@ export class ProfileService {
       .then( auth => {
          this.uid = auth.uid;
       })
+  }
+
+  statFactory( user ) {
+    const _appeals = user.appeals;
+
+    let stats: Object = {
+           open: _appeals.open.length,
+      completed: _appeals.completed.length,
+       reunited: _appeals.reunited.length
+    }
+
+    return stats;
   }
 
 }

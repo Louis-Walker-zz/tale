@@ -6,17 +6,18 @@
     height: 120px;
 }
 
-.profile--header {
+.profile__header {
     display: flex;
     width: 92%;
     margin: -8px 4%;
 }
 
-.profile--header img {
+.profile__header img {
     width: 30%;
     max-width: 64px;
     height: auto;
     max-height: 64px;
+    border-radius: 5px;
 }
 
 .profile--header--meta {
