@@ -1,11 +1,13 @@
-<div class="profile component">
+<div class="profile component"
+  *ngIf="profileStatsShow"
+>
   <div class="profile__header">
-    <img alt="" [src]="( profile | async )?.pictureUrl" />
+    <img alt="" [src]="profile.pictureUrl" />
 
     <div class="profile--header--meta">
-      <h1>{{ ( profile | async )?.name }}</h1>
+      <h1>{{ profile.name }}</h1>
 
-      <span class="role">{{ ( profile | async )?.role }}</span>
+      <span class="role">{{ profile.role }}</span>
     </div>
 
     <div class="profile--header--logout">
@@ -13,11 +15,9 @@
     </div>
   </div>
 
-  <ul class="profile--stats"
-    *ngIf="profileStatsShow"
-  >
+  <ul class="profile--stats">
       <li class="profile--stats--integer" 
-        *ngFor="let stat of ( profile | async )?.stats | mapToIterable; let i = index"
+        *ngFor="let stat of profile.stats | mapToIterable; let i = index"
         [attr.data-statname]="profileStatsKey(i)"
       >{{stat}}</li>
   </ul>

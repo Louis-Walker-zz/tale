@@ -16,7 +16,7 @@ import { Profile, ProfileStats } from './profile';
   providers: [ AuthService, ProfileService ]
 })
 export class ProfileComponent implements OnInit {
-  private profile: Observable<Profile>;
+  private profile: Profile;
   private profileStatsShow: boolean = false;
 
   constructor(
@@ -26,8 +26,10 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.profile = this.$p.getProfile().do( profile => {
-      this.profileStatsShow = true;
+    this.$p.getProfile()
+      .subscribe( ( profile ) => {
+        this.profile = profile;
+        this.profileStatsShow = true;
     })
   }
 

@@ -9,6 +9,8 @@ import 'rxjs/add/operator/take';
 
 import * as _ from 'lodash';
 
+import { Profile } from './profile';
+
 @Injectable()
 export class ProfileService {
   private uid: Promise<string> | string;
@@ -19,7 +21,7 @@ export class ProfileService {
     this.setUid();
    }
 
-  getProfile(): Observable<Object> {
+  getProfile(): Observable<Profile> {
     return this.$af.database.object('/users')
       .take(1)
       .map( users => {
@@ -30,9 +32,6 @@ export class ProfileService {
         authUser["stats"] = this.statFactory( authUser );
 
         return authUser;
-      })
-      .do( user => {
-        
       });
   }
 

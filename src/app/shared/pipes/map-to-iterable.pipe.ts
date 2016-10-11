@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class MapToIterablePipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
-    return Object.keys(value).map(key => value[key]);
+  transform( value: any, args?: any ): any[] {
+      return Object.keys(value).map(key => value[key]);
   }
 
 }
