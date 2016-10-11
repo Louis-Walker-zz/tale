@@ -15,21 +15,3 @@ export interface ProfileStats {
   completed: Observable<number> | number;
    reunited: Observable<number> | number;
 }
-
-export const ProfileTemp: Profile = {
-      appeals: {
-            open: [""],
-            completed: [""],
-            reunited: [""]
-      },
-      pictureUrl: "",
-      fbuid: "",
-      name: "",
-      regions: [""],
-      role: "",
-      stats: {
-            open: 0,
-            completed: 0,
-            reunited: 0
-      }
-}

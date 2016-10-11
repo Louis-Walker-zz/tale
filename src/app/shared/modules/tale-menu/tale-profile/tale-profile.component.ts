@@ -4,12 +4,10 @@ import { Observable } from 'rxjs/Observable';
 
 import * as _ from 'lodash';
 
-import { LocalStorageService } from 'ng2-webstorage';
-
 import { AuthService } from '../../../services/auth.service';
 import { ProfileService } from './profile.service';
 
-import { Profile, ProfileStats, ProfileTemp } from './profile';
+import { Profile, ProfileStats } from './profile';
 
 @Component({
   selector: 'tale-profile',
@@ -18,35 +16,19 @@ import { Profile, ProfileStats, ProfileTemp } from './profile';
   providers: [ AuthService, ProfileService ]
 })
 export class ProfileComponent implements OnInit {
-  profile;
-  profileStats: ProfileStats;
+  private profile: Observable<Profile>;
+  private profileStatsShow: boolean = false;
 
   constructor(
     private $auth: AuthService,
     private $p: ProfileService
   ) {
-    this.profile = {
-      appeals: {
-            open: [""],
-            completed: [""],
-            reunited: [""]
-      },
-      pictureUrl: "",
-      fbuid: "",
-      name: "",
-      regions: [""],
-      role: "",
-      stats: {
-            open: 300,
-            completed: 300,
-            reunited: 300
-      }
-};
-  console.log("x", this.profile);
   }
 
   ngOnInit() {
-    this.profile = this.$p.getProfile();
+    this.profile = this.$p.getProfile().do( profile => {
+      this.profileStatsShow = true;
+    })
   }
 
   logout() {

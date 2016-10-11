@@ -11,16 +11,14 @@
     <div class="profile--header--logout">
       <button class="profile--header--logout--button flaticon-sign-out-option" type="button" (click)="logout()">Logout</button>
     </div>
-
-    {{ ( profile | async )?.stats | json }}
   </div>
 
-  <ul class="profile--stats">
+  <ul class="profile--stats"
+    *ngIf="profileStatsShow"
+  >
       <li class="profile--stats--integer" 
-        *ngFor="let stat of ( profile.stats | async ) | mapToIterable; let i = index"
+        *ngFor="let stat of ( profile | async )?.stats | mapToIterable; let i = index"
         [attr.data-statname]="profileStatsKey(i)"
       >{{stat}}</li>
   </ul>
 </div>
-
-<span>{{ profile | async | json }}</span>

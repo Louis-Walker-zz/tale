@@ -29,8 +29,6 @@ export class ProfileService {
 
         authUser["stats"] = this.statFactory( authUser );
 
-        console.log(authUser);
-
         return authUser;
       })
       .do( user => {
