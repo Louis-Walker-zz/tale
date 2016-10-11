@@ -1,7 +1,9 @@
 import { Injectable, OnInit, ChangeDetectorRef } from '@angular/core';
-import { Http } from '@angular/http';
 
-import 'rxjs/add/operator/toPromise';
+import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
+
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/merge';
 
 import { Potential } from '../../shared/modules/potential/potential';
 
@@ -13,7 +15,7 @@ export class PotentialService {
   private filterOptions: Object;
 
   constructor(
-    private http: Http
+    private $af: AngularFire
   ) {
   }
 
@@ -21,16 +23,30 @@ export class PotentialService {
 
   }
 
-  // !TODO: handle desired ammounts and data types on http.get
-  getPotentials(desire?: number, type?: string): any {
-    /*return this.http.get('app/potentials')
-      .toPromise()
-      .then(res => res.json().data as Potential[])
-      .catch(this.handleError);*/
+  getPotentials( regions?: string[] ): any {
+    let regionObservables: FirebaseObjectObservable<Object>[] = [];
+    
+    let regionQuery: Object = {
+      query: {
+        limitToLast: 6,
+        orderByKey: true
+      }
+    };
+
+    for ( let region in regions ) {
+      let _shortName = regions[ region ];
+
+      regionObservables.push( this.$af.database.object('/potentials/' + _shortName, regionQuery ));
+    }
+
+    return regionObservables[0].merge( ...regionObservables );
+  }
+
+  getLead( id ) {
+    return this.$af.database.object('/leads/' + id);
   }
 
   handleError() {
     console.log('err');
   }
-
 }

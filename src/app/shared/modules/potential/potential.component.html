@@ -11,7 +11,9 @@
 
       <ul class="potential__tags">
         <li data-tag="tag-region">{{potential.regionLong}}</li>
-        <li *ngFor="let tag of potential.tags" [attr.data-tag]="'tag-' + tag">{{tag}}</li>
+        <li data-tag="tag-important"
+          *ngIf="potential.important"
+        >Important</li>
       </ul>
     </aside>
     

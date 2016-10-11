@@ -20,6 +20,8 @@ export class PotentialComponent implements OnInit {
     let _ext = this.extended;
 
     _ext = ( typeof _ext == "boolean" ) ? _ext : false;
+
+    console.log(this.potential, this.potential["_lid"]);
   }
 
   toggleOpen(): void {

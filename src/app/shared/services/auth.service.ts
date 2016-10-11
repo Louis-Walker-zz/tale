@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 
 import { AngularFire, FirebaseAuthState } from 'angularfire2';
 
+import 'rxjs/add/operator/toPromise';
+
 @Injectable()
 export class AuthService {
 

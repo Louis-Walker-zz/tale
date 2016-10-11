@@ -19,7 +19,7 @@ export class PotentialFeedComponent implements OnInit {
   private potentialsArr;
   private enabledRegions: string[];
   private order: string;
-  private showPotentials: boolean = true;
+  private showPotentials: boolean = false;
   private showOpenAppeal: boolean = false;
 
   constructor(
@@ -33,8 +33,24 @@ export class PotentialFeedComponent implements OnInit {
   ngOnInit() {
     this.updateFilterOptions();
 
-    //this.$p.getPotentials()
-    //  .then( ( potentials ) => this.potentialsArr = potentials );
+    this.$p.getPotentials( this.$f.getEnabled() )
+      .subscribe( ( potentials ) => { 
+        if ( potentials["$value"] !== null ) {
+          let _keys = Object.keys( potentials );
+
+          for ( let pid of _keys ) {
+            let _potential = potentials[pid];
+            
+            if ( pid !== "$key" ) {
+              _potential["lead"] = this.$p.getLead( _potential["_lid"] );
+            }
+          }
+        }
+
+        this.potentialsArr = potentials;
+        console.log(this.potentialsArr);
+        this.showPotentials = true;
+      });
   }
 
   toggleExtended(potential) {
