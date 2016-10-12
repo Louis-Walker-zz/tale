@@ -1,6 +1,6 @@
 import { Injectable, OnInit, ChangeDetectorRef } from '@angular/core';
 
-import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/merge';
@@ -9,8 +9,6 @@ import { Potential } from '../../shared/modules/potential/potential';
 
 @Injectable()
 export class PotentialService {
-  public potentials: Promise<Potential[]>;
-
   private potentialUrl: string = 'app/potentials';
   private filterOptions: Object;
 
@@ -23,8 +21,8 @@ export class PotentialService {
 
   }
 
-  getPotentials( regions?: string[] ): any {
-    let regionObservables: FirebaseObjectObservable<Object>[] = [];
+  getPotentials( regions?: string[] ): Observable<any> {
+    let regionObservables: FirebaseListObservable<Object>[] = [];
     
     let regionQuery: Object = {
       query: {
@@ -36,14 +34,15 @@ export class PotentialService {
     for ( let region in regions ) {
       let _shortName = regions[ region ];
 
-      regionObservables.push( this.$af.database.object('/potentials/' + _shortName, regionQuery ));
+      regionObservables.push( this.$af.database.list('/potentials/' + _shortName, regionQuery ));
     }
 
+    // TODO: Stop first region duping
     return regionObservables[0].merge( ...regionObservables );
   }
 
   getLead( id ) {
-    return this.$af.database.object('/leads/' + id);
+    return this.$af.database.list('/leads/' + id);
   }
 
   handleError() {

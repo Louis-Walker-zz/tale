@@ -6,8 +6,7 @@
 <ul class="potentials" 
   *ngIf="showPotentials">
 
-  <potential *ngFor="let potential of 
-    ( potentialsArr | filter: [ enabledRegions, order ] )"
+  <potential *ngFor="let potential of potentialsArr | async"
     
     [potential]="potential"
 
@@ -17,6 +16,18 @@
     (openAppealEvent)="openAppeal(potential)"
     >
   </potential>
+
+  <!--<potential *ngFor="let potential of 
+    ( potentialsArr | filter: [ enabledRegions, order ] )"
+    
+    [potential]="potential"
+
+    (mouseenter)="toggleExtended(potential)"
+    (mouseleave)="toggleExtended(potential)"
+
+    (openAppealEvent)="openAppeal(potential)"
+    >
+  </potential>-->
 </ul>
 
 <open-appeal *ngIf="showOpenAppeal"></open-appeal>

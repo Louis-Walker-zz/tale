@@ -7,6 +7,8 @@ import { PotentialService } from '../shared/potential.service';
 
 import { AngularFire } from 'angularfire2';
 
+import 'rxjs/add/operator/map';
+
 @Component({
   selector: 'potential-feed',
   templateUrl: 'potential-feed.component.html',
@@ -34,21 +36,12 @@ export class PotentialFeedComponent implements OnInit {
     this.updateFilterOptions();
 
     this.$p.getPotentials( this.$f.getEnabled() )
-      .subscribe( ( potentials ) => { 
-        if ( potentials["$value"] !== null ) {
-          let _keys = Object.keys( potentials );
-
-          for ( let pid of _keys ) {
-            let _potential = potentials[pid];
-            
-            if ( pid !== "$key" ) {
-              _potential["lead"] = this.$p.getLead( _potential["_lid"] );
-            }
-          }
-        }
-
+      .map( potential => {
+        return potential["lead"] = this.$p.getLead( potential["_lid"] );
+      })
+      .subscribe( potentials => { 
+        console.log(potentials);
         this.potentialsArr = potentials;
-        console.log(this.potentialsArr);
         this.showPotentials = true;
       });
   }
