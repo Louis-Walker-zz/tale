@@ -7,6 +7,7 @@ import { PotentialService } from '../shared/potential.service';
 
 import { AngularFire } from 'angularfire2';
 
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 @Component({
@@ -18,7 +19,7 @@ import 'rxjs/add/operator/map';
 export class PotentialFeedComponent implements OnInit {
   @Output() showExtended = new EventEmitter<number>();
 
-  private potentialsArr;
+  private potentialsArr: Observable<any>;
   private enabledRegions: string[];
   private order: string;
   private showPotentials: boolean = false;
@@ -36,9 +37,6 @@ export class PotentialFeedComponent implements OnInit {
     this.updateFilterOptions();
 
     this.$p.getPotentials( this.$f.getEnabled() )
-      .map( potential => {
-        return potential["lead"] = this.$p.getLead( potential["_lid"] );
-      })
       .subscribe( potentials => { 
         console.log(potentials);
         this.potentialsArr = potentials;

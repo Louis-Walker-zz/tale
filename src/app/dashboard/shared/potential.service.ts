@@ -39,6 +39,9 @@ export class PotentialService {
 
     // TODO: Stop first region duping
     return regionObservables[0].merge( ...regionObservables );
+    //        .map( potential => {
+    //          return potential["lead"] = this.getLead( potential["_lid"] );
+    //        });
   }
 
   getLead( id ) {
